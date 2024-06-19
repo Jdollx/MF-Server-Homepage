@@ -1,0 +1,253 @@
+body {
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+/* Adding space between sections */
+section {
+    margin-bottom: 50px;
+}
+
+/* disable highlight photos */
+img{
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* discord member count widget */
+.guild-widget-container {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+  }
+
+/* header bar background */
+#navbar-container {
+    background-color: black;
+}
+
+/* MF logo header image */
+.container img {
+    max-width: 200px; /* Adjust width as needed */
+    max-height: auto; /* Adjust height as needed */
+}
+
+/*change hover color for nav bar items */
+.nav-link:hover {
+    color: #3BC4ED; 
+}
+
+/* background for front page gradient */
+#main-graphic-container {
+    max-height: 675px;
+    width: auto;
+    background: linear-gradient(to bottom, #6736A8, #F8A6F8, white);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* character image*/
+#characters {
+    max-width: 45%;
+    max-height: auto; 
+    height: auto;
+    width: auto;
+    margin: 20px;
+    
+}
+
+/* main graphic header*/
+h1 {
+    font-size: 55px;
+    font-weight: bold;
+    margin: 20px;
+
+}
+
+p {
+    color:black;
+}
+
+/* button styles for whole page */
+.btn {
+    border-radius: 50px;
+    background-color: #637cda;
+    color: white;
+    transition: 0.10s;
+    padding: 8px 16px;
+}
+
+.btn:hover {
+    transform: scale(1.07);
+    background-color: #4060d4;
+    color: white;
+}
+
+/* slowing swipe speed of carousel */
+.carousel-inner .carousel-item {
+    transition-duration: 1s;
+}
+
+/* position card row more in center */
+.row.g-0 {
+    margin-left: 100px;
+    margin-right:100px;
+
+}
+
+/* clears default border around cards*/
+.card {
+    border-color:white;
+}
+
+/* icon size */
+.card-icon {
+    font-size: 50px;
+    padding-bottom: 10px;
+    transition: 0.10s;
+}
+
+/* card icons change colors */
+.card-icon:hover {
+    color: #74D3FA;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+/* makes container black after homepage graphic*/
+#black-container {
+    background-color: black;
+}
+
+/* container that holds both columns */
+.intermediate-container {
+    margin-top: 25px;
+}
+
+/* purple shadow around the soundcloud player */
+  .iframe-frame {
+    border-left: 20px solid black;
+    box-shadow: -20px 20px 0px 0px rgba(103, 54, 168, 0.75);
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+/* left margin between 'alls' and iframe */
+.left {
+    margin-left: 50px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 45px;
+    margin: 25px;
+}
+
+/* submission page coloring */
+.submission-container {
+    background: linear-gradient(to bottom, white, #F8A6F8);
+    height: 100vh;
+}
+
+/* about us parapragh */
+#about .container {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.avatarImage {
+    margin-left: 20px;
+}
+
+/* names in members cards */
+.team-member-cards .card-title {
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+
+.team-member-cards .card-body h6.userSpan {
+    font-size: 15px;
+    margin: 0;
+}
+
+/* roles in member cards */
+.team-member-cards .card-subtitle.mb-2.text-muted {
+    font-size: 15px;
+    margin: 0px;
+}
+
+/* card formatting for cards*/
+#team-members-1, 
+#team-members-2, 
+#team-members-3, 
+#team-members-4, 
+#team-members-5, 
+#team-members-6,
+#team-members-7 {
+    background-color: rgba(116, 211, 250, 0.45);
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* font size for member card paragraphs */
+#team-members-1 .card-body p,
+#team-members-2 .card-body p,
+#team-members-3 .card-body p,
+#team-members-4 .card-body p,
+#team-members-5 .card-body p,
+#team-members-6 .card-body p, 
+#team-members-7 .card-body p {
+    font-size: 15px; 
+    margin: 0;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+
+
+
+/* submission form */
+#submission-page-container {
+    background-color: rgba(103, 54, 168, 0.9); /* Purple background color */
+    border-radius: 5px;
+    border: 5px solid white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto; /* Center horizontally */
+    min-height: 500px;
+}
+
+.custom-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 2px 5px; /* Adjust padding to position the text entry */
+    width: calc(100% - 10px); /* Adjust width to account for padding */
+    margin: 0 5px; /* Adjust margin to create spacing */
+}
+
+footer {
+    background-color: black;
+    color:white;
+}
+
+  
+
+
+
+
+

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Feedback Discord</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="src/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- nav bar -->
+  <div id="nav-placeholder"></div>
+
+
+  <!-- mainpage graphic -->
+  <section class="bg-dark text-light p-5 text-center" id="main-graphic-container">
+    <div class="container">
+      <div class="d-sm-flex align-items-center justify-content-between"> 
+        <div>
+          <h1>A Music Community</h1>
+          <p id="slogan">Home to 7,000+ Musicians Worldwide</p>
+          <a class="btn btn-primary rounded-pill lead my-4" target="_blank" href="https://discord.com/invite/USgMVqc9yh">Join the Discord</a><br>
+        </div>
+        <img class="img-fluid d-none d-sm-block" id="characters" src="src/Images/Characters.png" alt="Cloud music characters"
+      </div>
+    </div>
+  </section>
+
+  <!-- columns of our services-->
+  <section class="text-dark p-5">
+    <div class="container">
+      <div class="row g-0">
+        <!-- FEEDBACK -->
+        <div class="col-md-3">
+          <div class="card text-dark">
+            <div class="card-body text-center">
+              <div class="card-icon">
+                <i class="bi bi-mic"></i>
+              </div>
+              <h4 class="card-title mb-3">
+                FEEDBACK
+              </h4>
+              <p>
+                A one-for-one critical system with guaranteed feedback after request.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- RESOURCES -->
+        <div class="col-md-3">
+          <div class="card text-dark">
+            <div class="card-body text-center">
+              <div class="card-icon">
+                <i class="bi bi-patch-question"></i>
+              </div>
+              <h4 class="card-title mb-3">
+                RESOURCES
+              </h4>
+              <p>
+                Various guides and tutorials for all skill levels along with dedicated question channels for individual guidance. 
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- EVENTS -->
+        <div class="col-md-3">
+          <div class="card text-dark">
+            <div class="card-body text-center">
+              <div class="card-icon">
+                <i class="bi bi-people"></i>
+              </div>
+              <h4 class="card-title mb-3">
+                EVENTS
+              </h4>
+              <p>
+                Server-wide events inspiring music creation and community, including Music Feedback Listening and 
+                Artist of the Week.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- PROMOTION -->
+        <div class="col-md-3">
+          <div class="card text-dark">
+            <div class="card-body text-center">
+              <div class="card-icon">
+                <i class="bi bi-briefcase"></i>
+              </div>
+              <h4 class="card-title mb-3">
+                PROMOTION
+              </h4>
+              <p>
+                Multiple channels available for music and service promotion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Column Soundcloud Section -->
+  <section class="text-light p-5" id="black-container">
+    <div class="container">
+      <!-- Intermediate Container -->
+      <div class="intermediate-container">
+        <div class="row align-items-center justify-content-center">
+          <!-- Left Column with SoundCloud iframe -->
+          <div class="col-md-6 text-center">
+            <div class="iframe iframe-frame" id="iframe-container">
+              <iframe id="sc" width="100%" height="400" scrolling="yes" frameborder="yes" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1486293190&color=%2374d3fa&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" style="padding: 0; margin: 0;"></iframe>
+              <div class="iframe-content">
+                <div style="font-size: 10px; color: #000000;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                  <a href="https://soundcloud.com/mfdisc" title="MFDisc" target="_blank" style="color: #000000; text-decoration: none;">MFDisc</a> · <a href="https://soundcloud.com/mfdisc/sets/music-feedback" title="Music Feedback" target="_blank" style="color: #cccc; text-decoration: none;">Music Feedback</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Column with Text -->
+          <div class="col-md-6 align-items-center">
+            <h2 class="left mb-3">All <span style="color:#EF8CDC">genres.</span><br>
+              All <span style="color:#EF8CDC">skill levels.</span><br>
+              All <span style="color:#EF8CDC">music.</span></h2>
+            <p class="text-light left">Discover our artists on SoundCloud.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- About Us -->
+<section class="text-dark p-5">
+  <div class="container text-center mb-3" id="about">
+    <div class="row justify-content-center">
+      <div class="col-md-9"> <!-- Adjust the number of columns according to your layout -->
+        <h2>WHO WE ARE</h2>
+        <p>Started in 2020, Music Feedback is a Discord community built on the foundation of sharing industry experience and expertise. 
+          We help musicians further their careers and hobbies through critical and supportive advice while providing opportunities to 
+          demonstrate improvement and understanding.
+          <br>
+          <br>
+          <span style="font-weight: bold;">Meet The Team</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Member cards -->
+<div class="container team-member-cards">
+  <div class="row">
+
+    <!-- Card Jenn -->
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card h-100" id="team-members-1">
+        <div class="row no-gutters">
+          <div class="col-12 col-md-4 text-center">
+            <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Jenn's Avatar" loading="lazy">
+          </div>
+          <div class="col-12 col-md-8 text-left">
+            <div>
+              <h5 class="card-title">Jenn</h5>
+              <h6><span class="userSpan"></span></h6>
+              <div class="card-subtitle mb-2 text-muted">Founder</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card-body">
+              <p class="card-text">
+                Jenn is a classically trained musician with over 15 years of experience playing instruments and writing songs.
+                <br><br>
+                She has experience creating content for and managing social media, recruiting and contacting for A&R, working at a live venue, as well as researching and implementing PR campaigns for musical artists.
+                <br><br>
+                She offers insight and guidance for managing music releases, press and promotion, and critical listening for production, songwriting, and lyricism.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Maki -->
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card h-100" id="team-members-2">
+        <div class="row no-gutters">
+          <div class="col-12 col-md-4 text-center">
+            <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Dan's Avatar" loading="lazy">
+          </div>
+          <div class="col-12 col-md-8 text-left">
+            <div>
+              <h5 class="card-title">Dan</h5>
+              <h6><span class="userSpan"></span></h6>
+              <div class="card-subtitle mb-2 text-muted">Admin</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card-body">
+              <p class="card-text">
+                Dan first stepped foot on stage over 20 years ago. He studied vocal performance at the Musician’s 
+                Institute in Hollywood, CA and worked under late platinum songwriter/producer, Jim Huff (Joe Bonamassa - “Dirt In My Pocket”).
+                <br><br>
+                Though primarily a vocalist, he plays multiple instruments and is a seasoned guitarist. He is both the guitarist and second 
+                vocalist for the experimental rock project, AWES, and is the videographer for OPB Productions.
+                <br><br>
+                He is a bartender, enjoys camping, poker, and spending time with good friends. He derives most of his abilities from 
+                his awesome hair, which has been scientifically confirmed to power Manhattan for 7.5 years.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Strike -->
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card h-100" id="team-members-3">
+        <div class="row no-gutters">
+          <div class="col-12 col-md-4 text-center">
+            <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Troy #2's Avatar" loading="lazy">
+          </div>
+          <div class="col-12 col-md-8 text-left">
+            <div>
+              <h5 class="card-title">Troy #2</h5>
+              <h6><span class="userSpan"></span></h6>
+              <div class="card-subtitle mb-2 text-muted">Admin</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card-body">
+              <p class="card-text">
+                Troy #2 is a world-renowned electric kazooist. He has 53 years of experience and toured briefly with the legendary Dr. Erasmus Garfunkle.
+                Born and raised in Pennsylvania, but now resides on his private alligator farm in Florida, collecting guitars as a hobby.
+                <br><br>
+                He also holds an honorary bachelor's degree in Hydrology from FU.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Sono -->
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card h-100" id="team-members-4">
+        <div class="row no-gutters">
+          <div class="col-12 col-md-4 text-center">
+            <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Sono's Avatar" loading="lazy">
+          </div>
+          <div class="col-12 col-md-8 text-left">
+            <div>
+              <h5 class="card-title">Randy</h5>
+              <h6><span class="userSpan"></span></h6>
+              <div class="card-subtitle mb-2 text-muted">Moderator</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card-body">
+              <p class="card-text">
+                Sonorous has been a live sound engineer for 20 years and in the last 3 years has started producing music and working on becoming a 
+                mixing and mastering engineer. 
+                <br><br>
+                He's played guitar and bass for a long time and beyond music, enjoys building computers, cooking and 
+                spending time with his wife and their six Shetland sheepdogs. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Tav -->
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card h-100" id="team-members-5">
+        <div class="row no-gutters">
+          <div class="col-12 col-md-4 text-center">
+            <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Tav's Avatar" loading="lazy">
+          </div>
+          <div class="col-12 col-md-8 text-left">
+            <div>
+              <h5 class="card-title">Josh</h5>
+              <h6><span class="userSpan"></span></h6>
+              <div class="card-subtitle mb-2 text-muted">Chat Moderator</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card-body">
+              <p class="card-text">(British) <br><br>
+                Tav is a producer and session musician from the UK. He has a degree in music production and has done a decent bit of work in the 
+                industry. 
+                <br><br>
+                Tav has a lot of experience within music production and session work. He enjoys helping people who are new to music and 
+                putting them on the right path.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Toast -->
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card h-100" id="team-members-6">
+        <div class="row no-gutters">
+          <div class="col-12 col-md-4 text-center">
+            <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Bot Boinker's Avatar" loading="lazy">
+          </div>
+          <div class="col-12 col-md-8 text-left">
+            <div>
+              <h5 class="card-title">Bot Boinker</h5>
+              <h6><span class="userSpan"></span></h6>
+              <div class="card-subtitle mb-2 text-muted">Developer</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card-body">
+              <p class="card-text">
+                ```py
+                <br><br> print("oh hai Mark") <br><br>```
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+<span id="userSpan"></span>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'src/php/user_grab.php');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        var users = JSON.parse(xhr.responseText);
+        if (users.length > 0) {
+          // Card 1 - Jenn
+          document.querySelector('#team-members-1 .avatarImage').src = users[0].avatarUrl;
+          document.querySelector('#team-members-1 .userSpan').textContent = users[0].username;
+          
+          // Card 2 - Maki
+          document.querySelector('#team-members-2 .avatarImage').src = users[1].avatarUrl; 
+          document.querySelector('#team-members-2 .userSpan').textContent = users[1].username; 
+
+          // Card 3 - Strike
+          document.querySelector('#team-members-3 .avatarImage').src = users[2].avatarUrl; 
+          document.querySelector('#team-members-3 .userSpan').textContent = users[2].username;
+
+          // Card 4 - Sono
+          document.querySelector('#team-members-4 .avatarImage').src = users[3].avatarUrl; 
+          document.querySelector('#team-members-4 .userSpan').textContent = users[3].username;
+
+          // Card 4 - Tav
+          document.querySelector('#team-members-5 .avatarImage').src = users[4].avatarUrl; 
+          document.querySelector('#team-members-5 .userSpan').textContent = users[4].username;
+
+          // Card 5 - Toast
+          document.querySelector('#team-members-6 .avatarImage').src = users[5].avatarUrl; 
+          document.querySelector('#team-members-6 .userSpan').textContent = users[5].username;
+        } else {
+          document.querySelectorAll('.userSpan').forEach(function(span) {
+            span.textContent = "No users found";
+          });
+        }
+      } else {
+        console.error('Error:', xhr.status, xhr.statusText);
+      }
+    }
+  };
+  xhr.send();
+});
+</script>
+
+
+
+
+
+
+
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $("#nav-placeholder").load("nav.html");
+  </script>
+  
+</body>
+
+
+  <footer class="text-center text-lg-start">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row my-4">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+          <div class="rounded-circle bg-dark shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+            <img src="src/Images/Logo.png" height="150" alt="MF Logo"loading="lazy">
+          </div>
+
+          <p class="text-center text-light">A Discord community for all musicians.</p>
+
+          <ul class="list-unstyled d-flex flex-row justify-content-center">
+            <li>
+              <a class="text-white px-2" href="#!">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a class="text-white px-2" href="#!">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a class="text-white ps-2" href="#!">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+        </div>
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4 text-light">Information</h5>
+
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="/submission.html" class="nav-item nav-link">Submit A Song</a>
+            </li>
+            <li class="mb-2">
+              <a href="https://music-feedback-discord-server.creator-spring.com/listing/music-feedback-logo" class="nav-item nav-link" target="_blank">Merchandise</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Contact</h5>
+
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="https://discord.com/invite/USgMVqc9yh" class="nav-item nav-link" target="_blank">Join The Discord</a>
+            </li>
+            <li>
+              <p class="nav-item nav-link">musicfeedbackdisc@gmail.com</p>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2024 Music Feedback Discord
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+
+</html>
