@@ -23,7 +23,7 @@
         If you have not already, join the server and fill out the form below with your Discord username and a public SoudCloud link to your song.
     </p>
 
-    <form id="submission-form" action="src/php/submit_song.php" method="post" onsubmit="showMessageAndReload(); return false;">
+    <form id="submission-form" action="src/php/submit_song.php" method="post">
         <div class="mb-3">
             <label for="discord_user" class="form-label">Discord Username:</label>
             <input type="text" class="form-control custom-input" id="discord_user" name="discord_user" required>
@@ -37,7 +37,12 @@
 
     <!-- submission confirmation message -->
     <div id="submission-message" style="display: none;" class="mt-3 text-success">
-      <p>Submission sent!</p>
+      <p><strong>Submission sent!</strong>s</p>
+    </div>
+
+    <!-- submission rejection-->
+    <div id="rejection-message" style="display: none;" class="mt-3 text-success">
+      <p><strong>Submission not sent!</strong> Please check that you spelled your username correctly and are a member of the Music Feedback Discord.</p>
     </div>
 
   </div>
@@ -69,15 +74,25 @@ $(document).ready(function() {
                 // Check the response
                 console.log(response);
 
-                // On success, display submission confirmation
-                $('#submission-message').show();
-
-                // Optional: Reset form fields
-                $('#submission-form')[0].reset();
+                if (response.trim() === 'success') {
+                    // On success, display submission confirmation
+                    $('#submission-message').show();
+                    $('#rejection-message').hide(); // rejection message is hidden
+                    //  reset form fields
+                    $('#submission-form')[0].reset();
+                } else {
+                    // show rejection message and hide success message
+                    $('#submission-message').hide();
+                    $('#rejection-message').show();
+                }
             },
             error: function(xhr, status, error) {
                 // Log the error for debugging
                 console.error(xhr.responseText);
+
+                // Show rejection message on error and hide success message
+                $('#submission-message').hide();
+                $('#rejection-message').show();
             }
         });
     });
@@ -95,7 +110,11 @@ $(document).ready(function() {
   });
 </script>
 
+<!-- submit a song response -->
+<script>
 
+  document.getElementById(submission-form)
+  </script>
 
 
 </body>

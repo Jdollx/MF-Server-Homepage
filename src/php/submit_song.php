@@ -41,9 +41,9 @@ function sendMail($discordUser, $songLink)
 
         // Send email
         $mail->send();
-        return "Email sent successfully";
+        echo "success";
     } catch (Exception $e) {
-        return "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
 
@@ -82,7 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (verifyUser($discordUser)) {
             // Send email
             $result = sendMail($discordUser, $songLink);
-            echo $result;
         } else {
             echo "Error: Discord user is not a member of the server";
         }
@@ -92,5 +91,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     echo "Error: Form data not submitted";
 }
-
 ?>
