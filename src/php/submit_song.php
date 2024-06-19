@@ -47,15 +47,45 @@ function sendMail($discordUser, $songLink)
     }
 }
 
+// verify that the user is in the server
+function verifyUser($discordUser) {
+    $token = $_ENV['TOKEN'];
+    $server_id = $_ENV['SERVER_ID'];
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://discord.com/api/v10/guilds/$server_id/members/search?query=$discordUser");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        "Authorization: Bot $token"
+    ]);
+
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    $members = json_decode($result, true);
+
+    foreach ($members as $member) {
+        if (isset($member['user']['username']) && $member['user']['username'] == $discordUser) {
+            return true;
+        }
+    }
+    return false;
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Check if discord_user and song_link are set
     if (isset($_POST["discord_user"]) && isset($_POST["song_link"])) {
         $discordUser = $_POST["discord_user"];
         $songLink = $_POST["song_link"];
 
-        // Send email
-        $result = sendMail($discordUser, $songLink);
-        echo $result;
+        // Verify Discord user
+        if (verifyUser($discordUser)) {
+            // Send email
+            $result = sendMail($discordUser, $songLink);
+            echo $result;
+        } else {
+            echo "Error: Discord user is not a member of the server";
+        }
     } else {
         echo "Error: Discord user or song link not provided";
     }
