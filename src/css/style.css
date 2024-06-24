@@ -18,16 +18,10 @@ img{
     user-select: none;
 }
 
-/* discord member count widget */
-.guild-widget-container {
-    position: absolute;
-    top: 0px;
-    right: 5px;
-  }
-
 /* header bar background */
 #navbar-container {
     background-color: black;
+    height:75px;
 }
 
 /* MF logo header image */
@@ -73,13 +67,35 @@ p {
     color:black;
 }
 
-/* button styles for whole page */
+/* keeping buttons together*/
+.btn-group {
+    white-space: nowrap; 
+    padding: 0 60px;
+    text-align: center;
+}
+
+.btn-group a {
+    display: inline-block; 
+    margin-right: 100px !important;
+}
+
+/* button styles for default page */
 .btn {
     border-radius: 50px;
     background-color: #637cda;
     color: white;
     transition: 0.10s;
     padding: 8px 16px;
+}
+
+/* other color button */
+.return-home {
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+    transition: 0.1s;
+    padding: 8px 16px;
+    border: 2px solid #637cda; 
 }
 
 .btn:hover {
@@ -198,6 +214,7 @@ h2 {
     border-radius: 5px;
     font-size: 20px;
     margin: 0;
+    height:550px;
 }
 
 /* font size for member card paragraphs */
@@ -214,8 +231,18 @@ h2 {
     padding-right: 2px;
 }
 
+/* format soundcloud container in card */
+#soundcloud {
+    margin-top: auto;
+    margin-bottom: 25px;
+  }
 
-
+/* soundcloud logo on team cards */
+#soundcloud img {
+    height: 30px;
+    width: auto;
+    filter:invert(.5);
+}
 
 /* submission form */
 #submission-page-container {
