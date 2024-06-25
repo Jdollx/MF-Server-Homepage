@@ -219,7 +219,7 @@ h2 {
     border-radius: 5px;
     font-size: 20px;
     margin: 0;
-    height:550px;
+    height:575px;
 }
 
 /* font size for member card paragraphs */
@@ -247,6 +247,20 @@ h2 {
     height: 30px;
     width: auto;
     filter:invert(.5);
+}
+
+/* card text substitute for soundcloud */
+#soundcloud-text {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 452;
+    color: black;
+    font-size: 12px;
+    filter:invert(.5)
+}
+
+#soundcloud img:hover, 
+#soundcloud-text:hover {
+    filter:invert(.4);
 }
 
 /* submission form */
