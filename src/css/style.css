@@ -10,7 +10,7 @@ section {
 }
 
 /* disable highlight photos */
-img{
+img {
     -khtml-user-select: none;
     -o-user-select: none;
     -moz-user-select: none;
@@ -262,6 +262,25 @@ h2 {
 #soundcloud-text:hover {
     filter:invert(.4);
 }
+
+.arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px; /* Adjust margin between button and hidden content */
+  }
+  
+  #arrow-icon {
+    font-size: 1.5rem; /* Adjust the size as needed */
+    margin-top: 5px; /* Adjust margin for positioning */
+    transition: transform 0.3s ease; /* Smooth transition for icon rotation */
+  }
+  
+  .card {
+    margin-bottom: 20px; /* Adjust margin between cards */
+  }
+  
 
 /* submission form */
 #submission-page-container {
