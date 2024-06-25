@@ -263,24 +263,21 @@ h2 {
     filter:invert(.4);
 }
 
+/* read more staff icon */
 .arrow {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin-bottom: 10px; /* Adjust margin between button and hidden content */
-  }
+    border: none;
+    background: none;
+    font-size: 40px;
+    padding: none;
+}
+
+/* arrow read more/less text */
+#read-more {
+    color:black;
+    font-size: 20px;
+}
   
-  #arrow-icon {
-    font-size: 1.5rem; /* Adjust the size as needed */
-    margin-top: 5px; /* Adjust margin for positioning */
-    transition: transform 0.3s ease; /* Smooth transition for icon rotation */
-  }
-  
-  .card {
-    margin-bottom: 20px; /* Adjust margin between cards */
-  }
-  
+
 
 /* submission form */
 #submission-page-container {
