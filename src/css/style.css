@@ -219,7 +219,7 @@ h2 {
     border-radius: 5px;
     font-size: 20px;
     margin: 0;
-    height:575px;
+    min-height:575px;
 }
 
 /* font size for member card paragraphs */

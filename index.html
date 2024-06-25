@@ -288,6 +288,7 @@
     <!-- dropdown button to show more -->
     <div class="text-center mt-4">
       <button class="arrow" id="toggle-more">
+        <p id="read-more">Read more</p>
         <i class="bi bi-arrow-down-circle" id="arrow-icon"></i>
       </button>
     </div>    
@@ -395,6 +396,14 @@
             </div>
           </div>
         </div>
+
+        <!-- up button to collapse -->
+        <div class="text-center mt-4">
+          <button class="arrow" id="toggle-less">
+            <p id="read-more">Read less</p>
+            <i class="bi bi-arrow-up-circle" id="arrow-icon"></i>
+          </button>
+        </div>  
       </div>
     </div>
   </section>
@@ -462,15 +471,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- read more staff member info -->
 <script>
-$(document).ready(function() {
-  $('#toggle-more').click(function() {
-    $('#hidden-team-members').slideToggle();
-    var isVisible = $('#hidden-team-members').is(':visible');
-    var buttonText = isVisible ? 'Hide Team Members' : 'Show More Team Members';
-    $(this).find('#arrow-icon').toggleClass('bi-arrow-down-circle bi-arrow-up-circle');
-    $(this).attr('aria-expanded', isVisible);
+  $(document).ready(function() {
+    $('#toggle-more').click(function() {
+      $('#hidden-team-members').slideToggle();
+      $(this).hide(); // Hide the "More" button after clicking it
+      $('#toggle-less').show(); // Show the "Less" button after clicking "More"
+    });
+
+    $('#toggle-less').click(function() {
+      $('#hidden-team-members').slideToggle();
+      $(this).hide(); // Hide the "Less" button after clicking it
+      $('#toggle-more').show(); // Show the "More" button after clicking "Less"
+    });
   });
-});
 
 </script>
 </body>
