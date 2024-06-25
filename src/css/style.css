@@ -30,6 +30,12 @@ img{
     max-height: auto; /* Adjust height as needed */
 }
 
+/* nav bar font */
+.nav-link {
+    color: grey;
+    margin: 2px;
+}
+
 /*change hover color for nav bar items */
 .nav-link:hover {
     color: #3BC4ED; 
@@ -60,7 +66,6 @@ h1 {
     font-size: 55px;
     font-weight: bold;
     margin: 20px;
-
 }
 
 p {
