@@ -277,9 +277,34 @@ h2 {
     font-size: 20px;
 }
 
-.questions-pink-background {
-    background-color: #F8A6F8;
+/* accordion container format + text */
+.accordion-item,
+.accordion-button {
+    background-color: #ffd2ff;
+    border-radius: 5px !important;
+    font-size: 15px;
+    margin-bottom: 5px;
 }
+
+/* keeps header bold on close */
+.accordion-button.collapsed {
+    font-weight: bold;
+}
+  
+/* keeps formatting bold on expand */
+.accordion-button:not(.collapsed) {
+    background-color: #ffd2ff;
+    color: black;
+    font-weight: bold;
+}
+
+/* gets rid of outline when accordion item clicked */
+.accordion-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
 
   
 
