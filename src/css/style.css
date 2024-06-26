@@ -169,14 +169,8 @@ p {
 h2 {
     font-weight: bold;
     font-size: 45px;
-    margin: 25px;
 }
 
-/* submission page coloring */
-.submission-container {
-    background: linear-gradient(to bottom, white, #F8A6F8);
-    height: 100vh;
-}
 
 /* about us parapragh */
 #about .container {
@@ -347,29 +341,37 @@ h2 {
     padding:10px;
 }
 
-
-/* submission form page */
-#submission-page-container {
-    background-color: rgba(103, 54, 168, 0.9); /* Purple background color */
-    border-radius: 5px;
-    border: 5px solid white;
-    width: 50%;
+/* container for two submission columns */
+.submission-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 40px auto; /* Center horizontally */
-    min-height: 500px;
+    flex-direction: row;
+    width: 66.66%;
+    height: 525px;
+    border: 2px solid #000; 
+    border-radius: 5px;
+    overflow: hidden; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.custom-input {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #000000;
-    padding: 2px 5px; /* Adjust padding to position the text entry */
-    width: calc(100% - 10px); /* Adjust width to account for padding */
-    margin: 0 5px; /* Adjust margin to create spacing */
+/* left submission column */
+#left-submission-container {
+    background: linear-gradient(to bottom right, #6736A8, #F8A6F8);
+    background-color: #ffffff; 
+    border-right: 2px solid #000;
+    border-radius: 5px;
+    width: 50%;
+    padding:50px;
 }
+
+.col-md-6:last-child {
+    flex: 1; /* Take up remaining space */
+}
+
+
 
 
 
