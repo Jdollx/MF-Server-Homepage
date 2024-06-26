@@ -277,13 +277,20 @@ h2 {
     font-size: 20px;
 }
 
-/* accordion container format + text */
-.accordion-item,
-.accordion-button {
+/* inside accordion (answer) */
+.accordion-item {
     background-color: #ffd2ff;
     border-radius: 5px !important;
     font-size: 15px;
+    align-items: center;
     margin-bottom: 5px;
+
+}
+/* accordion header */
+.accordion-button {
+    background-color: #ffd2ff;
+    border-radius: 5px !important;
+    font-size: 20px;
 }
 
 /* keeps header bold on close */
@@ -305,11 +312,43 @@ h2 {
 }
 
 
+/* channel link format */
+#channel-link {
+    color: #C9CDFB;
+    background-color: #383D6B;
+    padding: 3px;
+    border-radius: 5px;
+    text-decoration: none;
+}
 
-  
+#channel-link:hover {
+    background-color: #5864f2;
+    color: white;
+    text-decoration: none;
+}
+
+/* mod ping formatting */
+#mod-tag {
+    color: #0F806A;
+    background-color: #303B3D;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+#mod-tag:hover {
+    background-color: #2B4945;
+    color: #0F806A;
+}
+
+.container-grey {
+    background-color: #313338;
+    color:white;
+    border-radius: 5px;
+    padding:10px;
+}
 
 
-/* submission form */
+/* submission form page */
 #submission-page-container {
     background-color: rgba(103, 54, 168, 0.9); /* Purple background color */
     border-radius: 5px;
@@ -331,6 +370,17 @@ h2 {
     width: calc(100% - 10px); /* Adjust width to account for padding */
     margin: 0 5px; /* Adjust margin to create spacing */
 }
+
+
+
+
+
+
+
+
+
+
+
 
 footer {
     background-color: black;
