@@ -222,7 +222,7 @@ h2 {
     border-radius: 10px;
     font-size: 20px;
     margin: 0;
-    min-height:575px;
+    min-height:580px;
 }
 
 /* font size for member card paragraphs */
@@ -247,7 +247,7 @@ h2 {
 
 /* soundcloud logo on team cards */
 #soundcloud img {
-    height: 30px;
+    height: 35px;
     width: auto;
     filter:invert(.5);
 }
@@ -264,11 +264,6 @@ h2 {
 #soundcloud img:hover, 
 #soundcloud-text:hover {
     filter:invert(.4);
-}
-
-/* spotify button on submit page */
-#spotify-text:hover {
-    filter:invert(.2);
 }
 
 /* read more staff icon */
@@ -400,7 +395,25 @@ h2 {
     padding:50px;
 }
 
-
+/* submission form input fields */
+.custom-input {
+    background-color: transparent;
+    color: #6e6e6e; 
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid black 1px;
+    padding: 3px 10px;
+    border-radius: 0px;
+    width: 75%;
+}
+ 
+/* submission form input fields when clicked */
+.custom-input:focus {
+    outline: none;
+    box-shadow: 0 0 3px #74D3FA; 
+}
 
 
 
