@@ -415,7 +415,22 @@ h2 {
 }
 
 
+/* makes the left column disappear when collased + addes message to right side */
+.collapsed-message {
+    display: none;
+  }
 
+  @media (max-width: 768px) {
+    #left-submission-container {
+      display: none;
+    }
+    .collapsed-message {
+      display: block;
+      font-size: 20px;
+      color: black;
+      margin: 25px 0;
+    }
+  }
 
 
 
