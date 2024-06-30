@@ -11,7 +11,9 @@
   <link href="src/css/style.css" rel="stylesheet">
 </head>
 
-<!-- nav bar -->
+<body class="submission-page">
+
+  <!-- nav bar -->
 <nav class="navbar navbar-expand-lg navbar-dark" id="navbar-container">
   <div class="container">
     <img src="src/Images/MusicFeedbackBanner.jpg" alt="Music Feedback logo">
@@ -36,43 +38,46 @@
   </div>
 </nav>
 
-<body class="submission-page">
-
 <section>
+
+  <!-- left side -->
   <div class="submission-container">
-    <div class="row">
+    <div class="row justify-content-center align-items-center">
       <div class="col-md-6 text-light" id="left-submission-container">
-        <h2>SUBMIT A SONG</h2>
+        <h2 style="margin-bottom:25px;">SUBMIT A SONG</h2>
         <p>Playlist submissions are OPEN! 
           <br>
           <br>
-          We are currently accepting new submissions to be shared on our SoundCloud page. If you have not already, 
+          We are currently accepting new submissions to be shared on our Spotify page. If you have not already, 
           join the server and fill out the submission form with your Discord username and a public 
-          SoudCloud link to your song.</p>
+          Spotify link to your song.</p>
           <div class="container text-center">
-              <a href="https://open.spotify.com/playlist/2MVR9HI4elqTYjUMlEAY5k?si=2ded0b30f8f34502" target="_blank">
-                <img src="src/Images/Spotify.png" alt="Soundcloud Logo" style="height: 30px; width: auto;" id="spotify-text">
+            <a href="https://open.spotify.com/playlist/2MVR9HI4elqTYjUMlEAY5k?si=2ded0b30f8f34502" target="_blank" style="color:white;">
+              <img src="src/Images/Spotify.png" alt="Spotify Logo" style="height: 25px; width: auto;">Spotify</a></p>
               </a>
           </div>
       </div>
+
+      <!-- right side -->
       <div class="col-md-6" id="right-submission-container">
-        <h2>SUBMISSION</h2>
+        <h2 style="margin-bottom:25px;">SUBMISSION</h2>
+
         <form id="submission-form" action="src/php/submit_song.php" method="post">
           <div class="mb-3">
-              <label for="discord_user" class="form-label">Discord Username<span style="color:red">*</span>:</label>
-              <input type="text" class="form-control custom-input" id="discord_user" name="discord_user" required>
+              <label for="discord_user" class="form-label">Discord Username: <span style="color:red">*</span></label>
+              <input type="text" class="form-control custom-input" id="discord_user" name="discord_user" placeholder="ex: _plsdontmessageme_" required>
           </div>
           <div class="mb-3">
-              <label for="song_link" class="form-label">Spotify Link<span style="color:red">*</span>:</label>
-              <input type="text" class="form-control custom-input" id="song_link" name="song_link" required>
+              <label for="song_link" class="form-label">Spotify Link: <span style="color:red">*</span></label>
+              <input type="text" class="form-control custom-input" id="song_link" name="song_link" placeholder="ex: https://open.spotify.com/track/xxxx" required required>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
       </form>
   
       <!-- submission confirmation message -->
       <div id="submission-message" style="display: none;" class="mt-3 text-success">
-        <p><strong>Submission sent!</strong></p>
-        <a class="btn btn-primary rounded-pill lead my-4 return-home" id="return-home" href="index.html">Return Home</a>
+        <p><strong>Submission sent!</strong> Please allow a week for your song to appear on the playlist.</p>
+        <a class="btn btn-primary rounded-pill lead my-4" href="index.html">Return Home</a>
       </div>
   
       <!-- submission rejection-->
