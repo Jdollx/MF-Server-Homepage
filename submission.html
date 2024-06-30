@@ -49,23 +49,21 @@
           We are currently accepting new submissions to be shared on our SoundCloud page. If you have not already, 
           join the server and fill out the submission form with your Discord username and a public 
           SoudCloud link to your song.</p>
-          <div class="container text-center" id="soundcloud">
-            <span style="filter: invert(0);">
-              <a href="https://soundcloud.com/theperfecttea" target="_blank">
-                <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo" style="filter: invert(1);">
+          <div class="container text-center">
+              <a href="https://open.spotify.com/playlist/2MVR9HI4elqTYjUMlEAY5k?si=2ded0b30f8f34502" target="_blank">
+                <img src="src/Images/Spotify.png" alt="Soundcloud Logo" style="height: 30px; width: auto;" id="spotify-text">
               </a>
-            </span>
           </div>
       </div>
       <div class="col-md-6" id="right-submission-container">
         <h2>SUBMISSION</h2>
         <form id="submission-form" action="src/php/submit_song.php" method="post">
           <div class="mb-3">
-              <label for="discord_user" class="form-label">Discord Username:</label>
+              <label for="discord_user" class="form-label">Discord Username<span style="color:red">*</span>:</label>
               <input type="text" class="form-control custom-input" id="discord_user" name="discord_user" required>
           </div>
           <div class="mb-3">
-              <label for="song_link" class="form-label">SoundCloud Link:</label>
+              <label for="song_link" class="form-label">Spotify Link<span style="color:red">*</span>:</label>
               <input type="text" class="form-control custom-input" id="song_link" name="song_link" required>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
