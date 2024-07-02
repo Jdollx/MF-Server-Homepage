@@ -530,31 +530,32 @@ h2 {
 #join-section {
     width: 66.66%;
     margin: 0 auto;
-    padding-bottom: 25px;
-}
+  }
   
   /* Center align text and content in the row */
   #join-section .row {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column; /* Adjust as per your layout needs */
     text-align: center;
   }
   
   /* Style for the subscription banner */
   .subscription-banner {
     position: relative;
-    width: 100%;
+    width: 100%; /* Adjust as needed */
     max-width: 100%;
     overflow: hidden;
     border-radius: 6px;
     background-color: transparent;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the image horizontally and vertically */
+    justify-content: center;
     text-align: center;
     line-height: 1.6;
+    padding-top:25px;
+    margin-bottom: 50px
   }
   
   .subscription-banner img {
@@ -562,8 +563,9 @@ h2 {
     height: auto;
     max-width: 100%; /* Ensure it doesn't exceed its natural size */
     max-height: 100%; /* Ensure it doesn't exceed its natural size */
-    z-index: 1; /* Ensure image is above the shine effect */
+    z-index: 1;
   }
+  
   
   /* White shine effect */
   .subscription-banner::before {
