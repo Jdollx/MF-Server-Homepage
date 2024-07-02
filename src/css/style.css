@@ -454,9 +454,9 @@ h2 {
     display: none;
   }
 
-  @media (max-width: 768px) {
-    #left-submission-container {
-      display: none;
+@media (max-width: 768px) {
+#left-submission-container {
+    display: none;
     }
     .collapsed-message {
       display: block;
@@ -464,32 +464,68 @@ h2 {
       color: black;
       margin: 25px 0;
     }
-  }
-
-#slide-title {
-    font-size: 35px;
-    text-align: right;
-    padding-bottom: 25px;
-    padding-top: 25px;
-    padding-right: 50px;
-    font-weight:bold;
 }
-
-#slide-1 {
-    background-color: #313338;
+  
+/* overall slide format */
+.carousel-inner {
+    height: 600px; 
+    width: 100%; 
+    background-color: #303B3D;
     border-radius: 12px;
 }
 
+/* container for title and paragraph */
 #slide-container {
-    padding-right: 50px;
-    height:600px;
-    width: 66.66%;
-    text-align: left;
+    padding-right:75px;
+}
 
+/* slide title */
+#slide-title {
+    font-size: 35px;
+    text-align: right;
+    padding-bottom: 20px;
+    padding-top: 45px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.carousel-item {
+    height: 100%; /* Ensure each carousel item fills the container */
+}
+
+#slide-1 .row, 
+#slide-2 .row, 
+#slide-3 .row {
+    height: 100%; /* Make the row fill the height of the carousel item */
+}
+
+#slide-1 .col-md-6,
+#slide-2 .col-md-6,
+#slide-3 .col-md-6 {
+    height: 100%; /* Make the columns fill the height of the row */
+}
+
+#slide-1 .col-md-6 img,
+#slide-2 .col-md-6 img,
+#slide-3 .col-md-6 img {
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the height and maintain aspect ratio */
 }
 
 
+/* carousel arrows */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Adjust the width as needed */
+}
 
+.carousel-control-prev {
+    left: 0%; /* Push the previous arrow further left */
+}
+
+.carousel-control-next {
+    right: 0%; /* Push the next arrow further right */
+}
 
 
 

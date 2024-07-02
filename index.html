@@ -14,29 +14,29 @@
 <body>
 
   <!-- nav bar -->
-<nav class="navbar navbar-expand-lg navbar-dark" id="navbar-container">
-  <div class="container">
-    <img src="src/Images/MusicFeedbackBanner.jpg" alt="Music Feedback logo">
-    <!-- drop down menu on collapse -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- nav bar items -->
-    <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" target="_blank" href="https://discord.com/invite/USgMVqc9yh">Discord</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="submission.html">Submit A Song</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark" id="navbar-container">
+    <div class="container">
+      <img src="src/Images/MusicFeedbackBanner.jpg" alt="Music Feedback logo">
+      <!-- drop down menu on collapse -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- nav bar items -->
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://discord.com/invite/USgMVqc9yh">Discord</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="submission.html">Submit A Song</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- mainpage graphic -->
   <section class="bg-dark text-light p-5 text-center" id="main-graphic-container">
@@ -150,551 +150,545 @@
     </div>
   </section>
   
-
-<!-- Events -->
-<section class="text-dark p-5">
-  <div class="container text-center mb-3" id="about">
-    <div class="row justify-content-center">
-      <div class="col-md-9"> 
-        <h2>COMMUNITY EVENTS</h2>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active text-light" id="slide-1">
-              <div class="row">
-                <div class="col-md-6">
-                  <!-- Left column content for first slide -->
-                </div>
-                <div class="col-md-6" id="slide-container">
-                  <!-- Right column content for first slide -->
-                  <h3 id="slide-title">Artist of the Week</h3>
-                  <p class="text-light">Artist of the Week is a biweekly event celebrating a server member who has recently finished or released an original song or cover.
-                    The member is assigned the 
-                    <span id="aotw-tag">
-                    @Artist of the Week 
-                    </span>
-                    role for 2 weeks and broadcasted to the server. 
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-6">
-                  <!-- Left column content for second slide -->
-                  <h3 id="slide-title">Left Column Content 2</h3>
-                  <p>Content here...</p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Right column content for second slide -->
-                  <img class="d-block w-100" src="..." alt="Second slide image">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-6">
-                  <!-- Left column content for third slide -->
-                  <h3>Left Column Content 3</h3>
-                  <p>Content here...</p>
-                </div>
-                <div class="col-md-6">
-                  <!-- Right column content for third slide -->
-                  <img class="d-block w-100" src="..." alt="Third slide image">
-                </div>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- FAQ -->
-<section class="text-light p-5" id="black-container">
-  <div class="container text-center mb-3">
-    <div class="row justify-content-center">
-      <div class="col-md-9">
-        <h2>FAQ</h2>
-        <div class="row">
-          <!-- First Column -->
-          <div class="col-md-6">
-            <div class="accordion accordion-flush" id="accordionFlushExample1">
-              <div class="accordion-item">
-                <h3 class="accordion-header" id="flush-headingOne">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    How does the feedback system work?
-                  </button>
-                </h3>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1">
-                  <div class="accordion-body text-start">
-                    <p>The feedback channels through 
-                      <a href="https://discord.com/channels/732355624259813531/953764384495251477" target="_blank" id="channel-link">#feedback-access</a>
-                    offer a one-for-one system that guarantees quality feedback on audio, lyrics, and vocals. 
-                    Members are required to first give objective and critical feedback before they can ask for advice on their own song. Points are tracked through
-                    the implementation of &lt;MFR and &lt;MFS bot commands. 
-                    <br>
-                    <br>
-                    If feedback is not received after 48 hours, members may tag 
-                    <span id="mod-tag">@Moderators</span> 
-                    to receive help. 
+  <!-- Events carousel -->
+  <section class="text-dark p-5">
+    <div class="container-fluid text-center mb-3" id="about">
+      <div class="row justify-content-center">
+        <div class="col-md-9"> 
+          <h2>COMMUNITY EVENTS</h2>
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active text-light" id="slide-1">
+                <div class="row">
+                  <div class="col-md-6">
+                    <!-- Left column content for first slide -->
+                  </div>
+                  <div class="col-md-6" id="slide-container">
+                    <!-- Right column content for first slide -->
+                    <h3 id="slide-title">Artist of the Week</h3>
+                    <p class="text-light text-start">Artist of the Week is a biweekly event celebrating a server member who has recently finished or released an original song or cover.
+                      The member is assigned the 
+                      <span id="aotw-tag">
+                      @Artist of the Week 
+                      </span>
+                      role for 2 weeks and broadcasted to the server. 
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <h3 class="accordion-header" id="flush-headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    When are events held?
-                  </button>
-                </h3>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample1">
-                  <div class="accordion-body text-start">
-                    <p>Artist of the Week is held on a biweekly schedule. Every other Sunday, eligible members may submit their
-                    song to be voted upon for the popular vote. Another week will follow for follow up questions from members and submissions will reopen.
-                    Music Feedback Listening and Short Song Challenge will occur when our Event Hosts are available.
-                    <br> 
-                    <br>
-                    To keep up with our events, make sure to assign yourself the roles to find out when they're happening!
-                    </p>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <!-- Left column content for second slide -->
+                    <h3 id="slide-title">Left Column Content 2</h3>
+                    <p>Content here...</p>
+                  </div>
+                  <div class="col-md-6">
+                    <!-- Right column content for second slide -->
+                    <img class="d-block w-100" src="..." alt="Second slide image">
                   </div>
                 </div>
               </div>
-              <!-- New Accordion Item in First Column -->
-              <div class="accordion-item">
-                <h3 class="accordion-header" id="flush-headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Where can I post my music?
-                  </button>
-                </h3>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample1">
-                  <div class="accordion-body text-start">
-                    <p>There are three main channels for posting your original music: 
-                      <a href="https://discord.com/channels/732355624259813531/872886654560518175" target="_blank" id="channel-link">#intro-music</a>, 
-                      <a href="https://discord.com/channels/732355624259813531/732356854423748698" target="_blank" id="channel-link">#finished-music</a>, and 
-                      <a href="https://discord.com/channels/732355624259813531/732382984623095940" target="_blank" id="channel-link">#finished-lyrics</a>. 
-                      <br>
-                      <br>
-                      New members may post in #intro-music for the first 8 hours after joining. After that, #finished-music can be used until the 
-                      Stagehands role is reached. All works-in-progress may be posted in 
-                      <a href="https://discord.com/channels/732355624259813531/736231627742773349" target="_blank" id="channel-link">#works-in-progress</a>.
-                    </p>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <!-- Left column content for third slide -->
+                    <h3>Left Column Content 3</h3>
+                    <p>Content here...</p>
+                  </div>
+                  <div class="col-md-6">
+                    <!-- Right column content for third slide -->
+                    <img class="d-block w-100" src="..." alt="Third slide image">
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Second Column -->
-          <div class="col-md-6">
-            <div class="accordion accordion-flush" id="accordionFlushExample2">
-              <div class="accordion-item">
-                <h3 class="accordion-header" id="flush-headingFour">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                    Can I collaborate with other artists?
-                  </button>
-                </h3>
-                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample2">
-                  <div class="accordion-body text-start">
-                    <p>The Music Feedback server has an entire channel dedicated to the collaboration process through 
-                      <a href="https://discord.com/channels/732355624259813531/953032433383661639" target="_blank" id="channel-link">#collaboration-access</a>. 
-                      Members may send out real-time alerts for specific
-                      roles they need filled, like Singers, Rappers, or Instrumentalists.
-                    <br>
-                    <br>
-                    The 
-                    <a href="https://discord.com/channels/732355624259813531/1078039786050289684" target="_blank" id="channel-link">#service-portal</a>
-                    channel also allows for the advertisment of paid personal services, like mixing and mastering. 
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- New Accordion Item in Second Column -->
-              <div class="accordion-item">
-                <h3 class="accordion-header" id="flush-headingFive">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                    How can I rank up in the server?
-                  </button>
-                </h3>
-                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample2">
-                  <div class="accordion-body text-start">
-                    <p>Ranks are based on activity in the server. Deranking happens after 1 month of inactivity. 
-                      <br>
-                      <br>
-                      The current ranks are:
-                      <div class="container-grey">
-                        <ul>
-                          <li><span style="color: #c7150a; font-weight:bold;">Fans</span> - Temporary for 8 hours</li>
-                          <li><span style="color: #9ecca4; font-weight:bold;">Groupies</span> - New and inactive members</li>
-                          <li><span style="color: #b2deec; font-weight:bold;">Stagehands</span> - Regular members after 2 to 3 days</li> 
-                          <li><span style="color: #fadcaa; font-weight:bold;">Supporting Acts</span> - Members invovled in events after 1 to 2 weeks</li>
-                          <li><span style="color: #ca7290; font-weight:bold;">Ultimate Fans</span> | 
-                            <span style="color: #b399d4; font-weight:bold;">Headliners</span> - Members involved in all aspects of the server after 3 to 4 weeks</li>
-                          <li><span style="color: #8c32e6; font-weight:bold;">MF Gilded</span> - Fully engaged members after 6 months</li> 
-                          <li><span style="color: #3e35ff; font-weight:bold;">The Real MFrs</span> - Devoted members that embody the community of the server</li> 
-                        </ul>
-                      </div>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h3 class="accordion-header" id="flush-headingSix">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                    How do I contact moderators?
-                  </button>
-                </h3>
-                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample2">
-                  <div class="accordion-body text-start">
-                    <p>Please message 
-                      <span id="channel-link">@ModMail</span> 
-                      within the server.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<!-- About Us -->
-<section class="text-dark p-5">
-  <div class="container text-center mb-3" id="about">
-    <div class="row justify-content-center">
-      <div class="col-md-9"> <!-- Adjust the number of columns according to your layout -->
-        <h2>WHO WE ARE</h2>
-        <p>Started in 2020, Music Feedback is a Discord community built on the foundation of sharing industry experience and expertise. 
-          We help musicians further their careers and hobbies through critical and supportive advice while providing opportunities to 
-          demonstrate improvement and understanding.
-          <br>
-          <br>
-          <span style="font-weight: bold;">Meet The Team</span>
-        </p>
-      </div>
-    </div>
-  </div>
-
-
-<!-- Member cards -->
-<div class="container team-member-cards">
-  <div class="row">
-
-    <!-- Card Jenn -->
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-      <div class="card" id="team-members-1">
-        <div class="row no-gutters">
-          <div class="col-12 col-md-4 text-center">
-            <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Jenn's Avatar" loading="lazy">
-          </div>
-          <div class="col-12 col-md-8 text-left">
-            <div>
-              <h5 class="card-title">Jenn</h5>
-              <h6><span class="userSpan"></span></h6>
-              <div class="card-subtitle mb-2 text-muted">Founder</div>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="card-body">
-              <p class="card-text">
-                Jenn is a classically trained musician with over 15 years of experience playing instruments and writing songs.
-                <br><br>
-                She has experience creating content for and managing social media, recruiting and contacting for A&R, working at a live venue, as well as researching and implementing PR campaigns for musical artists.
-                <br><br>
-                She offers insight and guidance for managing music releases, press and promotion, and critical listening for production, songwriting, and lyricism.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="container text-center" id="soundcloud">
-          <a href="https://soundcloud.com/theperfecttea" target="_blank">
-            <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo">
-        </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card Maki -->
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-      <div class="card" id="team-members-2">
-        <div class="row no-gutters">
-          <div class="col-12 col-md-4 text-center">
-            <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Dan's Avatar" loading="lazy">
-          </div>
-          <div class="col-12 col-md-8 text-left">
-            <div>
-              <h5 class="card-title">Dan</h5>
-              <h6><span class="userSpan"></span></h6>
-              <div class="card-subtitle mb-2 text-muted">Admin</div>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="card-body">
-              <p class="card-text">
-                Dan is vocalist, songwriter, producer, and multi-instrumentalist who first stepped foot on stage over 20 years ago. 
-                Having studied vocal performance at the Musician’s Institute in Hollywood, CA, worked under late platinum record producer 
-                Jim Huff (Joe Bonamassa - “Dirt in My Pocket”), and leading numerous music projects, Dan brings a wealth of both professional and 
-                DIY experience to the team.
-                <br>
-                <br>
-                Currently, Dan is the lead guitarist and co-vocalist of Southern California based rock project, AWES. He also is actively producing 
-                new music for his solo lofi project, HyloH. 
-                <br>
-                <br>
-                When not working on music, you can find Dan either behind the bar pouring drinks, or behind the camera as part of OPB Productions’ 
-                videography team.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="container text-center" id="soundcloud">
-          <a href="https://www.whoisawes.com/" target="_blank">
-            <p id="soundcloud-text"><strong>W E B S I T E</strong></p>
-        </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card Strike -->
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-      <div class="card" id="team-members-3">
-        <div class="row no-gutters">
-          <div class="col-12 col-md-4 text-center">
-            <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Troy #2's Avatar" loading="lazy">
-          </div>
-          <div class="col-12 col-md-8 text-left">
-            <div>
-              <h5 class="card-title">Troy #2</h5>
-              <h6><span class="userSpan"></span></h6>
-              <div class="card-subtitle mb-2 text-muted">Admin</div>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="card-body">
-              <p class="card-text">
-                Troy #2 is a world-renowned electric kazooist. He has 53 years of experience and toured briefly with the legendary Dr. Erasmus Garfunkle.
-                Born and raised in Pennsylvania, but now resides on his private alligator farm in Florida, collecting guitars as a hobby.
-                <br><br>
-                He also holds an honorary bachelor's degree in Hydrology from FU.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="container text-center" id="soundcloud">
-          <a href="https://soundcloud.com/strike-vanisher" target="_blank">
-            <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo">
-        </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- dropdown button to show more -->
-    <div class="text-center mt-4">
-      <button class="arrow" id="toggle-more">
-        <p id="read-more">Read more</p>
-        <i class="bi bi-arrow-down-circle" id="arrow-icon"></i>
-      </button>
-    </div>    
-
-    <!-- hidden -->
-    <div id="hidden-team-members" style="display: none;">
-      <div class="row">
-
-
-        <!-- Card Sono -->
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="card" id="team-members-4">
-            <div class="row no-gutters">
-              <div class="col-12 col-md-4 text-center">
-                <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Sono's Avatar" loading="lazy">
-              </div>
-              <div class="col-12 col-md-8 text-left">
-                <div>
-                  <h5 class="card-title">Randy</h5>
-                  <h6><span class="userSpan"></span></h6>
-                  <div class="card-subtitle mb-2 text-muted">Moderator</div>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="card-body">
-                  <p class="card-text">
-                    Sonorous has been a live sound engineer for 20 years and in the last 3 years has started producing music and working on becoming a 
-                    mixing and mastering engineer. 
-                    <br><br>
-                    He's played guitar and bass for a long time and beyond music, enjoys building computers, cooking and 
-                    spending time with his wife and their six Shetland sheepdogs. 
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="container text-center" id="soundcloud">
-              <a href="https://soundcloud.com/onorous" target="_blank">
-                <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo">
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
             </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card Tav -->
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="card" id="team-members-5">
-            <div class="row no-gutters">
-              <div class="col-12 col-md-4 text-center">
-                <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Tav's Avatar" loading="lazy">
-              </div>
-              <div class="col-12 col-md-8 text-left">
-                <div>
-                  <h5 class="card-title">Josh</h5>
-                  <h6><span class="userSpan"></span></h6>
-                  <div class="card-subtitle mb-2 text-muted">Chat Moderator</div>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="card-body">
-                  <p class="card-text">(British) <br><br>
-                    Tav is a producer and session musician from the UK. He has a degree in music production and has done a decent bit of work in the 
-                    industry. 
-                    <br><br>
-                    Tav has a lot of experience within music production and session work. He enjoys helping people who are new to music and 
-                    putting them on the right path.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="container text-center" id="soundcloud">
-              <a href="https://soundcloud.com/josh-anderson-582665172" target="_blank">
-                <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo">
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
             </a>
-            </div>
           </div>
         </div>
-
-        <!-- Card David -->
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="card" id="team-members-6">
-            <div class="row no-gutters">
-              <div class="col-12 col-md-4 text-center">
-                <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="David's Avatar" loading="lazy">
-              </div>
-              <div class="col-12 col-md-8 text-left">
-                <div>
-                  <h5 class="card-title">DavidP</h5>
-                  <h6><span class="userSpan"></span></h6>
-                  <div class="card-subtitle mb-2 text-muted">Chat Moderator</div>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="card-body">
-                  <p class="card-text">DavidP is an IT consulting engineer by day and blossoming producer / artist, also by day, 
-                    because he is often ignoring his job for music. By the time you read this, he may have been fired from his job. 
-                    <br>
-                    <br>
-                    David loves to help others in domains such as guitar, music theory, mixing and planning for success. 
-                    Although he feels he still has room to grow in all of these domains, he believes that actively participating in a 
-                    community focused on feedback and improvement is critical for success. He also enjoys gardening.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="container text-center" id="black-spotify">
-              <a href="https://open.spotify.com/artist/0OydwhGKTosIOjmp7Nh9Lh" target="_blank">
-                <img src="src/Images/Spotify_Black.png" alt="Spotify Logo">
-            </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card Amaze -->
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="card" id="team-members-7">
-            <div class="row no-gutters">
-              <div class="col-12 col-md-4 text-center">
-                <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="AmazeAck's Avatar" loading="lazy">
-              </div>
-              <div class="col-12 col-md-8 text-left">
-                <div>
-                  <h5 class="card-title">AmazeACK</h5>
-                  <h6><span class="userSpan"></span></h6>
-                  <div class="card-subtitle mb-2 text-muted">Chat Moderator</div>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="card-body">
-                  <p class="card-text">AmazeACK is a classical/electric bassist who has been reading sheet music for over 7 years. 
-                    His favorite genres are Classical (romantic and classical eras), Psychedelic/Space Rock, and (blues-based) Progressive Rock.
-                    <br>
-                    <br>
-                    He helps others learn about theory, instrumentation, and style used in classical or contemporary music. He is also knowledgeable 
-                    and a fan of famous bands such as Pink Floyd, The Doors, and The Beatles.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card Toast -->
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="card" id="team-members-8">
-            <div class="row no-gutters">
-              <div class="col-12 col-md-4 text-center">
-                <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Bot Boinker's Avatar" loading="lazy">
-              </div>
-              <div class="col-12 col-md-8 text-left">
-                <div>
-                  <h5 class="card-title">Bot Boinker</h5>
-                  <h6><span class="userSpan"></span></h6>
-                  <div class="card-subtitle mb-2 text-muted">Developer</div>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="card-body">
-                  <p class="card-text">
-                    ```py
-                    <br><br> print("oh hai Mark") <br><br>```
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="container text-center" id="soundcloud">
-              <a href="https://github.com/DanielDublin" target="_blank">
-                <img src="src/Images/Github.png" alt="GitHub Logo">
-            </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- up button to collapse -->
-        <div class="text-center mt-4">
-          <button class="arrow" id="toggle-less">
-            <p id="read-more">Read less</p>
-            <i class="bi bi-arrow-up-circle" id="arrow-icon"></i>
-          </button>
-        </div>  
       </div>
     </div>
   </section>
 
-<!-- Join us banner -->
-<section>
-  <div class="container">
-    <h2>Not a member?</h2>
-  </div>
-</section>
+  <!-- FAQ -->
+  <section class="text-light p-5" id="black-container">
+    <div class="container text-center mb-3">
+      <div class="row justify-content-center">
+        <div class="col-md-9">
+          <h2>FAQ</h2>
+          <div class="row">
+            <!-- First Column -->
+            <div class="col-md-6">
+              <div class="accordion accordion-flush" id="accordionFlushExample1">
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      How does the feedback system work?
+                    </button>
+                  </h3>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1">
+                    <div class="accordion-body text-start">
+                      <p>The feedback channels through 
+                        <a href="https://discord.com/channels/732355624259813531/953764384495251477" target="_blank" id="channel-link">#feedback-access</a>
+                      offer a one-for-one system that guarantees quality feedback on audio, lyrics, and vocals. 
+                      Members are required to first give objective and critical feedback before they can ask for advice on their own song. Points are tracked through
+                      the implementation of &lt;MFR and &lt;MFS bot commands. 
+                      <br>
+                      <br>
+                      If feedback is not received after 48 hours, members may tag 
+                      <span id="mod-tag">@Moderators</span> 
+                      to receive help. 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      When are events held?
+                    </button>
+                  </h3>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample1">
+                    <div class="accordion-body text-start">
+                      <p>Artist of the Week is held on a biweekly schedule. Every other Sunday, eligible members may submit their
+                      song to be voted upon for the popular vote. Another week will follow for follow up questions from members and submissions will reopen.
+                      Music Feedback Listening and Short Song Challenge will occur when our Event Hosts are available.
+                      <br> 
+                      <br>
+                      To keep up with our events, make sure to assign yourself the roles to find out when they're happening!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- New Accordion Item in First Column -->
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Where can I post my music?
+                    </button>
+                  </h3>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample1">
+                    <div class="accordion-body text-start">
+                      <p>There are three main channels for posting your original music: 
+                        <a href="https://discord.com/channels/732355624259813531/872886654560518175" target="_blank" id="channel-link">#intro-music</a>, 
+                        <a href="https://discord.com/channels/732355624259813531/732356854423748698" target="_blank" id="channel-link">#finished-music</a>, and 
+                        <a href="https://discord.com/channels/732355624259813531/732382984623095940" target="_blank" id="channel-link">#finished-lyrics</a>. 
+                        <br>
+                        <br>
+                        New members may post in #intro-music for the first 8 hours after joining. After that, #finished-music can be used until the 
+                        Stagehands role is reached. All works-in-progress may be posted in 
+                        <a href="https://discord.com/channels/732355624259813531/736231627742773349" target="_blank" id="channel-link">#works-in-progress</a>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Second Column -->
+            <div class="col-md-6">
+              <div class="accordion accordion-flush" id="accordionFlushExample2">
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                      Can I collaborate with other artists?
+                    </button>
+                  </h3>
+                  <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample2">
+                    <div class="accordion-body text-start">
+                      <p>The Music Feedback server has an entire channel dedicated to the collaboration process through 
+                        <a href="https://discord.com/channels/732355624259813531/953032433383661639" target="_blank" id="channel-link">#collaboration-access</a>. 
+                        Members may send out real-time alerts for specific
+                        roles they need filled, like Singers, Rappers, or Instrumentalists.
+                      <br>
+                      <br>
+                      The 
+                      <a href="https://discord.com/channels/732355624259813531/1078039786050289684" target="_blank" id="channel-link">#service-portal</a>
+                      channel also allows for the advertisment of paid personal services, like mixing and mastering. 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- New Accordion Item in Second Column -->
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="flush-headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                      How can I rank up in the server?
+                    </button>
+                  </h3>
+                  <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample2">
+                    <div class="accordion-body text-start">
+                      <p>Ranks are based on activity in the server. Deranking happens after 1 month of inactivity. 
+                        <br>
+                        <br>
+                        The current ranks are:
+                        <div class="container-grey">
+                          <ul>
+                            <li><span style="color: #c7150a; font-weight:bold;">Fans</span> - Temporary for 8 hours</li>
+                            <li><span style="color: #9ecca4; font-weight:bold;">Groupies</span> - New and inactive members</li>
+                            <li><span style="color: #b2deec; font-weight:bold;">Stagehands</span> - Regular members after 2 to 3 days</li> 
+                            <li><span style="color: #fadcaa; font-weight:bold;">Supporting Acts</span> - Members invovled in events after 1 to 2 weeks</li>
+                            <li><span style="color: #ca7290; font-weight:bold;">Ultimate Fans</span> | 
+                              <span style="color: #b399d4; font-weight:bold;">Headliners</span> - Members involved in all aspects of the server after 3 to 4 weeks</li>
+                            <li><span style="color: #8c32e6; font-weight:bold;">MF Gilded</span> - Fully engaged members after 6 months</li> 
+                            <li><span style="color: #3e35ff; font-weight:bold;">The Real MFrs</span> - Devoted members that embody the community of the server</li> 
+                          </ul>
+                        </div>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="flush-headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                      How do I contact moderators?
+                    </button>
+                  </h3>
+                  <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample2">
+                    <div class="accordion-body text-start">
+                      <p>Please message 
+                        <span id="channel-link">@ModMail</span> 
+                        within the server.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section class="text-dark p-5">
+    <div class="container text-center mb-3" id="about">
+      <div class="row justify-content-center">
+        <div class="col-md-9"> <!-- Adjust the number of columns according to your layout -->
+          <h2>WHO WE ARE</h2>
+          <p>Started in 2020, Music Feedback is a Discord community built on the foundation of sharing industry experience and expertise. 
+            We help musicians further their careers and hobbies through critical and supportive advice while providing opportunities to 
+            demonstrate improvement and understanding.
+            <br>
+            <br>
+            <span style="font-weight: bold;">Meet The Team</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Member cards -->
+  <div class="container team-member-cards">
+    <div class="row">
+
+      <!-- Card Jenn -->
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card" id="team-members-1">
+          <div class="row no-gutters">
+            <div class="col-12 col-md-4 text-center">
+              <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Jenn's Avatar" loading="lazy">
+            </div>
+            <div class="col-12 col-md-8 text-left">
+              <div>
+                <h5 class="card-title">Jenn</h5>
+                <h6><span class="userSpan"></span></h6>
+                <div class="card-subtitle mb-2 text-muted">Founder</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card-body">
+                <p class="card-text">
+                  Jenn is a classically trained musician with over 15 years of experience playing instruments and writing songs.
+                  <br><br>
+                  She has experience creating content for and managing social media, recruiting and contacting for A&R, working at a live venue, as well as researching and implementing PR campaigns for musical artists.
+                  <br><br>
+                  She offers insight and guidance for managing music releases, press and promotion, and critical listening for production, songwriting, and lyricism.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center" id="soundcloud">
+            <a href="https://soundcloud.com/theperfecttea" target="_blank">
+              <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo">
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Maki -->
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card" id="team-members-2">
+          <div class="row no-gutters">
+            <div class="col-12 col-md-4 text-center">
+              <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Dan's Avatar" loading="lazy">
+            </div>
+            <div class="col-12 col-md-8 text-left">
+              <div>
+                <h5 class="card-title">Dan</h5>
+                <h6><span class="userSpan"></span></h6>
+                <div class="card-subtitle mb-2 text-muted">Admin</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card-body">
+                <p class="card-text">
+                  Dan is vocalist, songwriter, producer, and multi-instrumentalist who first stepped foot on stage over 20 years ago. 
+                  Having studied vocal performance at the Musician’s Institute in Hollywood, CA, worked under late platinum record producer 
+                  Jim Huff (Joe Bonamassa - “Dirt in My Pocket”), and leading numerous music projects, Dan brings a wealth of both professional and 
+                  DIY experience to the team.
+                  <br>
+                  <br>
+                  Currently, Dan is the lead guitarist and co-vocalist of Southern California based rock project, AWES. He also is actively producing 
+                  new music for his solo lofi project, HyloH. 
+                  <br>
+                  <br>
+                  When not working on music, you can find Dan either behind the bar pouring drinks, or behind the camera as part of OPB Productions’ 
+                  videography team.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center" id="soundcloud">
+            <a href="https://www.whoisawes.com/" target="_blank">
+              <p id="soundcloud-text"><strong>W E B S I T E</strong></p>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Strike -->
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card" id="team-members-3">
+          <div class="row no-gutters">
+            <div class="col-12 col-md-4 text-center">
+              <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Troy #2's Avatar" loading="lazy">
+            </div>
+            <div class="col-12 col-md-8 text-left">
+              <div>
+                <h5 class="card-title">Troy #2</h5>
+                <h6><span class="userSpan"></span></h6>
+                <div class="card-subtitle mb-2 text-muted">Admin</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card-body">
+                <p class="card-text">
+                  Troy #2 is a world-renowned electric kazooist. He has 53 years of experience and toured briefly with the legendary Dr. Erasmus Garfunkle.
+                  Born and raised in Pennsylvania, but now resides on his private alligator farm in Florida, collecting guitars as a hobby.
+                  <br><br>
+                  He also holds an honorary bachelor's degree in Hydrology from FU.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center" id="soundcloud">
+            <a href="https://soundcloud.com/strike-vanisher" target="_blank">
+              <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo">
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- dropdown button to show more -->
+      <div class="text-center mt-4">
+        <button class="arrow" id="toggle-more">
+          <p id="read-more">Read more</p>
+          <i class="bi bi-arrow-down-circle" id="arrow-icon"></i>
+        </button>
+      </div>    
+
+      <!-- hidden -->
+      <div id="hidden-team-members" style="display: none;">
+        <div class="row">
+
+
+          <!-- Card Sono -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card" id="team-members-4">
+              <div class="row no-gutters">
+                <div class="col-12 col-md-4 text-center">
+                  <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Sono's Avatar" loading="lazy">
+                </div>
+                <div class="col-12 col-md-8 text-left">
+                  <div>
+                    <h5 class="card-title">Randy</h5>
+                    <h6><span class="userSpan"></span></h6>
+                    <div class="card-subtitle mb-2 text-muted">Moderator</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="card-body">
+                    <p class="card-text">
+                      Sonorous has been a live sound engineer for 20 years and in the last 3 years has started producing music and working on becoming a 
+                      mixing and mastering engineer. 
+                      <br><br>
+                      He's played guitar and bass for a long time and beyond music, enjoys building computers, cooking and 
+                      spending time with his wife and their six Shetland sheepdogs. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center" id="soundcloud">
+                <a href="https://soundcloud.com/onorous" target="_blank">
+                  <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo">
+              </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Tav -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card" id="team-members-5">
+              <div class="row no-gutters">
+                <div class="col-12 col-md-4 text-center">
+                  <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Tav's Avatar" loading="lazy">
+                </div>
+                <div class="col-12 col-md-8 text-left">
+                  <div>
+                    <h5 class="card-title">Josh</h5>
+                    <h6><span class="userSpan"></span></h6>
+                    <div class="card-subtitle mb-2 text-muted">Chat Moderator</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="card-body">
+                    <p class="card-text">(British) <br><br>
+                      Tav is a producer and session musician from the UK. He has a degree in music production and has done a decent bit of work in the 
+                      industry. 
+                      <br><br>
+                      Tav has a lot of experience within music production and session work. He enjoys helping people who are new to music and 
+                      putting them on the right path.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center" id="soundcloud">
+                <a href="https://soundcloud.com/josh-anderson-582665172" target="_blank">
+                  <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo">
+              </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card David -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card" id="team-members-6">
+              <div class="row no-gutters">
+                <div class="col-12 col-md-4 text-center">
+                  <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="David's Avatar" loading="lazy">
+                </div>
+                <div class="col-12 col-md-8 text-left">
+                  <div>
+                    <h5 class="card-title">DavidP</h5>
+                    <h6><span class="userSpan"></span></h6>
+                    <div class="card-subtitle mb-2 text-muted">Chat Moderator</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="card-body">
+                    <p class="card-text">DavidP is an IT consulting engineer by day and blossoming producer / artist, also by day, 
+                      because he is often ignoring his job for music. By the time you read this, he may have been fired from his job. 
+                      <br>
+                      <br>
+                      David loves to help others in domains such as guitar, music theory, mixing and planning for success. 
+                      Although he feels he still has room to grow in all of these domains, he believes that actively participating in a 
+                      community focused on feedback and improvement is critical for success. He also enjoys gardening.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center" id="black-spotify">
+                <a href="https://open.spotify.com/artist/0OydwhGKTosIOjmp7Nh9Lh" target="_blank">
+                  <img src="src/Images/Spotify_Black.png" alt="Spotify Logo">
+              </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Amaze -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card" id="team-members-7">
+              <div class="row no-gutters">
+                <div class="col-12 col-md-4 text-center">
+                  <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="AmazeAck's Avatar" loading="lazy">
+                </div>
+                <div class="col-12 col-md-8 text-left">
+                  <div>
+                    <h5 class="card-title">AmazeACK</h5>
+                    <h6><span class="userSpan"></span></h6>
+                    <div class="card-subtitle mb-2 text-muted">Chat Moderator</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="card-body">
+                    <p class="card-text">AmazeACK is a classical/electric bassist who has been reading sheet music for over 7 years. 
+                      His favorite genres are Classical (romantic and classical eras), Psychedelic/Space Rock, and (blues-based) Progressive Rock.
+                      <br>
+                      <br>
+                      He helps others learn about theory, instrumentation, and style used in classical or contemporary music. He is also knowledgeable 
+                      and a fan of famous bands such as Pink Floyd, The Doors, and The Beatles.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Toast -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card" id="team-members-8">
+              <div class="row no-gutters">
+                <div class="col-12 col-md-4 text-center">
+                  <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Bot Boinker's Avatar" loading="lazy">
+                </div>
+                <div class="col-12 col-md-8 text-left">
+                  <div>
+                    <h5 class="card-title">Bot Boinker</h5>
+                    <h6><span class="userSpan"></span></h6>
+                    <div class="card-subtitle mb-2 text-muted">Developer</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="card-body">
+                    <p class="card-text">
+                      ```py
+                      <br><br> print("oh hai Mark") <br><br>```
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center" id="soundcloud">
+                <a href="https://github.com/DanielDublin" target="_blank">
+                  <img src="src/Images/Github.png" alt="GitHub Logo">
+              </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- up button to collapse -->
+          <div class="text-center mt-4">
+            <button class="arrow" id="toggle-less">
+              <p id="read-more">Read less</p>
+              <i class="bi bi-arrow-up-circle" id="arrow-icon"></i>
+            </button>
+          </div>  
+        </div>
+      </div>
+    </section>
+
+  <!-- Join us banner -->
+  <section>
+    <div class="container">
+      <h2>Not a member?</h2>
+    </div>
+  </section>
 
 
 
