@@ -224,12 +224,14 @@ h2 {
 #team-members-4, 
 #team-members-5, 
 #team-members-6,
-#team-members-7 {
+#team-members-7,
+#team-members-8 {
     background-color: rgba(116, 211, 250, 0.45);
     border-radius: 12px;
     font-size: 20px;
     margin: 0;
     min-height:580px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* font size for member card paragraphs */
@@ -239,7 +241,8 @@ h2 {
 #team-members-4 .card-body p,
 #team-members-5 .card-body p,
 #team-members-6 .card-body p, 
-#team-members-7 .card-body p {
+#team-members-7 .card-body p,
+#team-members-8 .card-body p {
     font-size: 15px; 
     margin: 0;
     padding-left: 2px;

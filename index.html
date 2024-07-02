@@ -583,9 +583,78 @@
           </div>
         </div>
 
-        <!-- Card Toast -->
+        <!-- Card David -->
         <div class="col-12 col-md-6 col-lg-4 mb-4">
           <div class="card" id="team-members-6">
+            <div class="row no-gutters">
+              <div class="col-12 col-md-4 text-center">
+                <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="David's Avatar" loading="lazy">
+              </div>
+              <div class="col-12 col-md-8 text-left">
+                <div>
+                  <h5 class="card-title">DavidP</h5>
+                  <h6><span class="userSpan"></span></h6>
+                  <div class="card-subtitle mb-2 text-muted">Chat Moderator</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card-body">
+                  <p class="card-text">DavidP is an IT consulting engineer by day and blossoming producer / artist, also by day, 
+                    because he is often ignoring his job for music. By the time you read this, he may have been fired from his job. 
+                    <br>
+                    <br>
+                    David loves to help others in domains such as guitar, music theory, mixing and planning for success. 
+                    Although he feels he still has room to grow in all of these domains, he believes that actively participating in a 
+                    community focused on feedback and improvement is critical for success. He also enjoys gardening.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="container text-center" id="soundcloud">
+              <a href="https://soundcloud.com/josh-anderson-582665172" target="_blank">
+                <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo">
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Amaze -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card" id="team-members-7">
+            <div class="row no-gutters">
+              <div class="col-12 col-md-4 text-center">
+                <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="AmazeAck's Avatar" loading="lazy">
+              </div>
+              <div class="col-12 col-md-8 text-left">
+                <div>
+                  <h5 class="card-title">AmazeACK</h5>
+                  <h6><span class="userSpan"></span></h6>
+                  <div class="card-subtitle mb-2 text-muted">Chat Moderator</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card-body">
+                  <p class="card-text">AmazeACK is a classical/electric bassist who has been reading sheet music for over 7 years. 
+                    His favorite genres are Classical (romantic and classical eras), Psychedelic/Space Rock, and (blues-based) Progressive Rock.
+                    <br>
+                    <br>
+                    He helps others learn about theory, instrumentation, and style used in classical or contemporary music. He is also knowledgeable 
+                    and a fan of famous bands such as Pink Floyd, The Doors, and The Beatles.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="container text-center" id="soundcloud">
+              <a href="https://soundcloud.com/josh-anderson-582665172" target="_blank">
+                <img src="src/Images/Soundcloud.png" alt="Soundcloud Logo">
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Toast -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card" id="team-members-8">
             <div class="row no-gutters">
               <div class="col-12 col-md-4 text-center">
                 <img class="avatarImage card-img-top rounded-circle mt-3" style="width: 75px; height: 75px;" alt="Bot Boinker's Avatar" loading="lazy">
@@ -674,9 +743,17 @@ document.addEventListener('DOMContentLoaded', function() {
           document.querySelector('#team-members-5 .avatarImage').src = users[4].avatarUrl; 
           document.querySelector('#team-members-5 .userSpan').textContent = users[4].username;
 
-          // Card 5 - Toast
+          // Card 5 - David P
           document.querySelector('#team-members-6 .avatarImage').src = users[5].avatarUrl; 
           document.querySelector('#team-members-6 .userSpan').textContent = users[5].username;
+
+          // Card 6 - Amaze
+          document.querySelector('#team-members-7 .avatarImage').src = users[6].avatarUrl; 
+          document.querySelector('#team-members-7 .userSpan').textContent = users[6].username;
+
+          // Card 7 - Toast
+          document.querySelector('#team-members-8 .avatarImage').src = users[7].avatarUrl; 
+          document.querySelector('#team-members-8 .userSpan').textContent = users[7].username;
         } else {
           document.querySelectorAll('.userSpan').forEach(function(span) {
             span.textContent = "No users found";

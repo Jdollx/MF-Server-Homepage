@@ -49,6 +49,8 @@ $userIds = [
     'STRIKE_ID' => $_ENV['STRIKE_ID'],
     'SONO_ID' => $_ENV['SONO_ID'],
     'TAV_ID' => $_ENV['TAV_ID'],
+    'DAVID_ID' => $_ENV['DAVID_ID'],
+    'AMAZE_ID' => $_ENV['AMAZE_ID'],
     'TOAST_ID' => $_ENV['TOAST_ID'],
 ];
 
