@@ -526,7 +526,23 @@ h2 {
     right: 0%; /* Push the next arrow further right */
 }
 
-
+#join-section {
+    background-color: #f0f0f0; /* Example background color */
+  }
+  
+  #join-section .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #subscription-banner {
+    width: 66.67%; /* 2/3 of the container width */
+    max-width: 100%; /* Ensure it doesn't exceed its natural size */
+  }
+  
 
 footer {
     background-color: black;
