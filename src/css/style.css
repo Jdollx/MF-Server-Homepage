@@ -386,8 +386,7 @@ h2 {
 }
 
 /* submission page color */
-.submission-page,
-#events-section {
+.submission-page {
     background: #e0e0e0;
     padding: 20px;
 }
