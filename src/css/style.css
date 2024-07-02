@@ -5,11 +5,7 @@ body {
 }
 
 /* Adding space between sections */
-section#main-graphic-container,
-section#services-section,
-section#black-container,
-section#events-section,
- {
+section {
     margin-bottom: 50px;
 }
 
@@ -393,6 +389,7 @@ h2 {
 .submission-page,
 #events-section {
     background: #e0e0e0;
+    padding: 20px;
 }
 
 .submission-container {
