@@ -39,7 +39,7 @@
   </nav>
 
   <!-- mainpage graphic -->
-  <section class="bg-dark text-light p-5 text-center" id="main-graphic-container">
+  <section class="bg-dark text-light p-5 text-center" id="main-graphic-container" id="main-graphic-section">
     <div class="container">
       <div class="d-sm-flex align-items-center justify-content-between"> 
         <div>
@@ -53,7 +53,7 @@
   </section>
 
   <!-- columns of our services-->
-  <section class="text-dark p-5">
+  <section class="text-dark p-5" id="services-section">
     <div class="container">
       <div class="row g-0">
         <!-- FEEDBACK -->
@@ -151,7 +151,7 @@
   </section>
   
   <!-- Events carousel -->
-  <section class="text-dark p-5">
+  <section class="text-dark p-5" id="events-section">
     <div class="container-fluid text-center mb-3" id="about">
       <div class="row justify-content-center">
         <div class="col-md-9"> 
@@ -161,7 +161,15 @@
               <div class="carousel-item active text-light" id="slide-1">
                 <div class="row">
                   <div class="col-md-6">
-                    <!-- Left column content for first slide -->
+                    <!-- Left column content for left section -->
+                    <div class="row">
+                      <div class="col-md-6" id="left-slide-menu">
+                        <p>#test</p>
+                      </div>
+                      <!-- right column in the left section -->
+                      <div class="col-md-6" id="another-left-column">
+                      </div>
+                    </div>
                   </div>
                   <div class="col-md-6" id="slide-container">
                     <!-- Right column content for first slide -->
@@ -171,7 +179,7 @@
                       <span id="aotw-tag">
                       @Artist of the Week 
                       </span>
-                      role for 2 weeks and broadcasted to the server. 
+                       role for 2 weeks and broadcasted to the server. 
                     </p>
                   </div>
                 </div>
@@ -367,7 +375,7 @@
   </section>
 
   <!-- About Us -->
-  <section class="text-dark p-5">
+  <section class="text-dark p-5" id="about-section">
     <div class="container text-center mb-3" id="about">
       <div class="row justify-content-center">
         <div class="col-md-9"> <!-- Adjust the number of columns according to your layout -->
@@ -684,7 +692,7 @@
     </section>
 
   <!-- Join us banner -->
-  <section>
+  <section id="join-section">
     <div class="container">
       <h2>Not a member?</h2>
     </div>
