@@ -526,10 +526,14 @@ h2 {
     right: 0%; /* Push the next arrow further right */
 }
 
+/* Adjust the width of the join-section to 2/3 of the page */
 #join-section {
-    background-color: #f0f0f0; /* Example background color */
-  }
+    width: 66.66%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
   
+  /* Center align text and content in the row */
   #join-section .row {
     display: flex;
     align-items: center;
@@ -538,10 +542,49 @@ h2 {
     text-align: center;
   }
   
-  #subscription-banner {
-    width: 66.67%; /* 2/3 of the container width */
-    max-width: 100%; /* Ensure it doesn't exceed its natural size */
+  /* Style for the subscription banner */
+  .subscription-banner {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the image horizontally and vertically */
+    text-align: center;
+    line-height: 1.6;
   }
+  
+  .subscription-banner img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto;
+    max-width: 100%; /* Ensure it doesn't exceed its natural size */
+    max-height: 100%; /* Ensure it doesn't exceed its natural size */
+    z-index: 1; /* Ensure image is above the shine effect */
+  }
+  
+  /* White shine effect */
+  .subscription-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%; /* Initial position off-screen to the left */
+    width: 15%; /* white line width */
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7));
+    transform: skewX(-25deg);
+    z-index: 2;
+    transition: left 0.85s; /* Add transition for smooth animation */
+  }
+  
+  /* Adjust the position on hover */
+  .subscription-banner:hover::before {
+    left: 125%; /* Move the shine effect to the right */
+  }
+  
+
   
 
 footer {
