@@ -249,8 +249,9 @@ h2 {
     padding-right: 2px;
 }
 
-/* format soundcloud container in card */
-#soundcloud {
+/* format soundcloud, spotify container in card */
+#soundcloud, 
+#black-spotify {
     margin-top: auto;
     margin-bottom: 25px;
   }
@@ -258,6 +259,13 @@ h2 {
 /* soundcloud logo on team cards */
 #soundcloud img {
     height: 35px;
+    width: auto;
+    filter:invert(.5);
+}
+
+/* spotify logo on cards */
+#black-spotify img {
+    height: 26px;
     width: auto;
     filter:invert(.5);
 }
@@ -271,7 +279,8 @@ h2 {
     filter:invert(.5)
 }
 
-#soundcloud img:hover, 
+#soundcloud img:hover,
+#black-spotify img:hover,
 #soundcloud-text:hover {
     filter:invert(.4);
 }
