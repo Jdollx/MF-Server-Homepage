@@ -499,50 +499,32 @@ h2 {
     background-color: #e0e0e0;
   }
 
-  /* Center align text and content in the row */
-  #join-section .row {
+/* Center align text and content in the row */
+#join-section .row {
     text-align: center;
     background-color: #e0e0e0;
-  }
+}
   
-  /* Style for the subscription banner */
-  .subscription-banner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 12px;
-    background-color: #e0e0e0; /* Grey background color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
+/* arrows for subscription banner */
+.carousel-control-prev {
+    left: -40px; 
+}
   
-  .subscription-banner img {
-    max-width: 100%; /* Ensure the image fills the container */
-    height: auto;
-    display: block; /* Ensure image behaves like a block element */
-  }
-  
-  /* White shine effect */
-  .subscription-banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%; /* Initial position off-screen to the left */
-    width: 15%; /* White shine width */
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7));
-    transform: skewX(-25deg);
-    z-index: 2;
-    transition: left 0.85s; /* Add transition for smooth animation */
-  }
-  
-  /* Adjust the position on hover */
-  .subscription-banner:hover::before {
-    left: 125%; /* Move the shine effect to the right */
-  }
-  
+  /* Right arrow */
+.carousel-control-next {
+    right: -40px; 
+}
+
+/* Override Bootstrap's default carousel control icon background color */
+.carousel-control-prev-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    width:20%;
+}
+
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    width:20%; 
+}
   
 
 footer {
