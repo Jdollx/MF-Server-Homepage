@@ -72,18 +72,6 @@ p {
     color:black;
 }
 
-/* keeping buttons together*/
-.btn-group {
-    white-space: nowrap; 
-    padding: 0 60px;
-    text-align: center;
-}
-
-.btn-group a {
-    display: inline-block; 
-    margin-right: 100px !important;
-}
-
 /* button styles for default page */
 .btn {
     border-radius: 50px;
@@ -93,11 +81,17 @@ p {
     padding: 8px 16px;
 }
 
+/* space between submit buttons */
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+
 /* other color button */
 .return-home {
     border-radius: 50px;
     background-color: transparent;
-    color: white;
+    color: #637cda;
     transition: 0.1s;
     padding: 8px 16px;
     border: 2px solid #637cda; 
@@ -107,6 +101,13 @@ p {
     transform: scale(1.07);
     background-color: #4060d4;
     color: white;
+}
+
+/* other color button */
+.return-home:hover {
+    transform: scale(1.07);
+    background-color: white;
+    color: #4060d4;
 }
 
 /* slowing swipe speed of carousel */
