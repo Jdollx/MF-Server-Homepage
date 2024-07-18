@@ -152,11 +152,15 @@ p {
 /* container that holds both columns */
 .intermediate-container {
     margin-top: 25px;
+    text-align: left;
+    padding-left:auto;
+    padding-right:auto;
 }
 
 
 /* Purple shadow around the iframe */
 #soundcloud-container .purple-square {
+    text-align: center;
     position: relative;
     border-radius: 12px;
     overflow: hidden;
@@ -174,6 +178,7 @@ p {
     border-radius: 12px;
     padding: 0;
     margin: auto;
+    text-align: center;
     box-shadow:
     5px 5px 10px rgba(111, 66, 193, 0.2),
     10px 10px 20px rgba(101, 52, 192, 0.3),
