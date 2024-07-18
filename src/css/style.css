@@ -4,8 +4,8 @@ body {
     font-size: 20px;
 }
 
-/* Adding space between sections */
-section {
+/* Adding space between sections besides last*/
+section:not(:last-of-type) {
     margin-bottom: 50px;
 }
 
@@ -543,7 +543,13 @@ h2 {
     padding: none; /* Adjust padding as needed */
     margin-bottom:none !important;
     background-color: #e0e0e0;
-  }
+}
+
+.ads {
+    border-radius:12px;
+    width:100%;
+    height:auto;
+}
 
 /* Center align text and content in the row */
 #join-section .row {
