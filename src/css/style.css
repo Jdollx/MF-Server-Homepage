@@ -310,11 +310,12 @@ h2 {
 /* description of event text */
 .event-description {
     text-align: left;
+    padding-bottom: 25px;
 }
 
 /* resize event image */
 .event-image {
-    height:245px;
+    height:250px;
     width:auto;
     border-radius: 12px;
     text-align: center;
