@@ -358,11 +358,13 @@ h2 {
     color:black;
     padding-top:15px;
     display: inline-block;
+
 }
 
 .read-more-events:hover {
     color:#3BC4ED;
     text-decoration: underline;
+    transition: color 0.2s ease, text-decoration 0.2s ease, transform 0.2s ease;
 }
 
 
