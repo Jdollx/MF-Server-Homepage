@@ -299,6 +299,21 @@ h2 {
     font-size: 20px;
 }
 
+
+/* Event section */
+/* description of event text */
+.event-description {
+    text-align: left;
+}
+
+/* resize event image */
+.event-image {
+    height:225px;
+    width:auto;
+    text-align: center;
+}
+
+/* FAQ */
 /* inside accordion (answer) */
 .accordion-item {
     background-color: #ffd2ff;
@@ -465,31 +480,6 @@ h2 {
     }
 }
 
-
-
-.event-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    border:#000 solid;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.event-card:nth-child(even) .description {
-    order: -1;
-}
-
-.event-card img {
-    max-width: 100%;
-    height: auto;
-    width: 50%;
-    border-radius: 12px;
-}
-.event-card .description {
-    flex: 1;
-    padding: 1rem;
-}
 
 
 /* Adjust the width of the join-section to 2/3 of the page */
