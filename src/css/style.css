@@ -365,16 +365,15 @@ h2 {
 /* FAQ */
 /* inside accordion (answer) */
 .accordion-item {
-    background-color: #ffd2ff;
+    background-color: #FCD6FD;
     border-radius: 12px !important;
     font-size: 15px;
     align-items: center;
     margin-bottom: 5px;
-
 }
 /* accordion header */
 .accordion-button {
-    background-color: #ffd2ff;
+    background-color: #FCD6FD;
     border-radius: 12px !important;
     font-size: 20px;
 }
@@ -386,7 +385,7 @@ h2 {
   
 /* keeps formatting bold on expand */
 .accordion-button:not(.collapsed) {
-    background-color: #ffd2ff;
+    background-color: #FCD6FD;
     color: black;
     font-weight: bold;
 }
