@@ -354,7 +354,6 @@ h2 {
     color:black;
     padding-top:15px;
     display: inline-block;
-
 }
 
 .read-more-events:hover {
@@ -362,7 +361,6 @@ h2 {
     text-decoration: underline;
     transition: color 0.2s ease, text-decoration 0.2s ease, transform 0.2s ease;
 }
-
 
 /* FAQ */
 /* inside accordion (answer) */
@@ -557,6 +555,39 @@ h2 {
 .carousel-arrow {
     width: 30%;
 }
+
+
+
+/* Scroll to top button */
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: transparent; /* Remove background color */
+    color: grey; /* Icon color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 25px; /* Some padding */
+    border-radius: 12px; /* Rounded corners */
+    font-size: 40px; /* Increase font size */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  /* Change icon color on hover */
+  #myBtn:hover {
+    color: #3BC4ED; /* Icon color on hover */
+    background-color: transparent; /* Keep background transparent */
+  }
+
+
+
+
+
+
+
 
 footer {
     background-color: black;

@@ -696,7 +696,7 @@
             <div class="col-md-6 mx-auto mb-3">
               <div class="button-group justify-content-center">
                 <a class="btn btn-primary rounded-pill" target="_blank" href="https://discord.com/channels/732355624259813531/role-subscriptions">Subscribe</a>
-                <a class="btn btn-primary rounded-pill return-home" id="return-home" target="_blank" href="https://music-feedback-discord-server.creator-spring.com/listing/music-feedback-logo">MF Merch</a>
+                <a class="btn btn-primary rounded-pill return-home" id="return-home" target="_blank" href="https://music-feedback-discord-server.creator-spring.com/listing/music-feedback-logo">Merchandise</a>
               </div>
             </div>
           </div>
@@ -727,7 +727,8 @@
       </div>
     </section>
     
-    
+  <!-- scroll to top button -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-square-fill"></i></button>
     
 
 
@@ -806,6 +807,29 @@ document.addEventListener('DOMContentLoaded', function() {
   };
   xhr.send();
 });
+</script>
+
+<!-- scroll to top button -->
+<script>
+// Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 </script>
 
 <!-- read more staff member info -->
