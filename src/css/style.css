@@ -531,26 +531,17 @@ h2 {
     }
 }
 
-
 /* join section */
 #join-section { 
     background-color: #e0e0e0;
 }
 
-/* container for join us banner */
-.banner-container {
-    width: 100%;
-    min-height: 500px; 
-    overflow: hidden; 
-}
-
-/* actual image */
-.carousel-item img {
-    width: 1000%; /* Make the image full width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure it’s treated as a block element */
-    margin: 0 auto; /* Center the image horizontally */
-}
+/* image */
+.d-block.mx-auto {
+    width: 75%; /* Adjust the width to make the image smaller */
+    height: auto;
+    padding-bottom: 25px;
+  }
 
 /* carousel control styles */
 .carousel-control-prev,
@@ -563,12 +554,15 @@ h2 {
     background-color: rgba(0, 0, 0, 0.5); /* Optional: style the arrow icons */
 }
 
-
+.carousel-arrow {
+    width: 30%;
+}
 
 footer {
     background-color: black;
-    color:white;
+    color: white;
 }
+
 
   
 
