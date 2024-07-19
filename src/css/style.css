@@ -110,11 +110,6 @@ p {
     color: #4060d4;
 }
 
-/* slowing swipe speed of carousel */
-.carousel-inner .carousel-item {
-    transition-duration: 1s;
-}
-
 /* position card row more in center */
 .row.g-0 {
     margin-left: 100px;
@@ -537,47 +532,38 @@ h2 {
 }
 
 
-
-/* Adjust the width of the join-section to 2/3 of the page */
-#join-section {
-    padding: none; /* Adjust padding as needed */
-    margin-bottom:none !important;
+/* join section */
+#join-section { 
     background-color: #e0e0e0;
 }
 
-.ads {
-    border-radius:12px;
-    width:100%;
-    height:auto;
+/* container for join us banner */
+.banner-container {
+    width: 100%;
+    min-height: 500px; 
+    overflow: hidden; 
 }
 
-/* Center align text and content in the row */
-#join-section .row {
-    text-align: center;
-    background-color: #e0e0e0;
+/* actual image */
+.carousel-item img {
+    width: 1000%; /* Make the image full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure it’s treated as a block element */
+    margin: 0 auto; /* Center the image horizontally */
 }
-  
-/* arrows for subscription banner */
-.carousel-control-prev {
-    left: -40px; 
-}
-  
-  /* Right arrow */
+
+/* carousel control styles */
+.carousel-control-prev,
 .carousel-control-next {
-    right: -40px; 
+    width: 5%; /* Adjust width of the arrows */
 }
 
-/* Override Bootstrap's default carousel control icon background color */
-.carousel-control-prev-icon {
-    background-color: rgba(0, 0, 0, 0.5);
-    width:20%;
-}
-
+.carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5);
-    width:20%; 
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: style the arrow icons */
 }
-  
+
+
 
 footer {
     background-color: black;
