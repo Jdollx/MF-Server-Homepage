@@ -365,17 +365,31 @@ h2 {
 /* FAQ */
 /* inside accordion (answer) */
 .accordion-item {
-    background-color: #FCD6FD;
+    background-color: #e0e0e0;
     border-radius: 12px !important;
     font-size: 15px;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 /* accordion header */
 .accordion-button {
-    background-color: #FCD6FD;
+    background-color: #e0e0e0;
     border-radius: 12px !important;
     font-size: 20px;
+    padding: 25px;
+}
+
+/* Bar on the left side of the button */
+.accordion-button::before {
+    content: "";
+    position: absolute;
+    left: 10px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px; /* Width of the bar */
+    height: 80%; /* Height of the bar */
+    background-color: black; /* Color of the bar */
+    border-radius: 5px; /* Optional: rounding the edges of the bar */
 }
 
 /* keeps header bold on close */
@@ -385,7 +399,7 @@ h2 {
   
 /* keeps formatting bold on expand */
 .accordion-button:not(.collapsed) {
-    background-color: #FCD6FD;
+    background-color: #e0e0e0;
     color: black;
     font-weight: bold;
 }
@@ -567,7 +581,7 @@ h2 {
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
     background-color: transparent; /* Remove background color */
-    color: grey; /* Icon color */
+    color: rgb(174, 174, 174); /* Icon color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 25px; /* Some padding */
     border-radius: 12px; /* Rounded corners */
