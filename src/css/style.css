@@ -380,6 +380,14 @@ h2 {
     transition: color 0.2s ease, text-decoration 0.2s ease, transform 0.2s ease;
 }
 
+/* grey box behind mf fest info */
+.event-box {
+    background-color: rgb(241, 241, 241);
+    padding:25px;
+    border-radius: 12px;
+    width: 560px;
+  }
+
 /* FAQ */
 /* inside accordion (answer) */
 .accordion-item {
