@@ -570,6 +570,9 @@ h2 {
       color: black;
       margin: 25px 0;
     }
+    #right-submission-container {
+        padding:25px;
+    }
 }
 
 /* join section */
