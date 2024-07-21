@@ -37,7 +37,7 @@ function sendMail($discordUser, $songLink)
         // Content
         $mail->isHTML(true);
         $mail->Subject = "New Song Submission from $discordUser";
-        $mail->Body = "A new song has been submitted.<br>Discord User: $discordUser<br>SoundCloud Link: $songLink";
+        $mail->Body = "A new song has been submitted.<br>Discord User: $discordUser<br>Spotify Link: $songLink";
 
         // Send email
         $mail->send();
