@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,144 +15,150 @@
 <body class="submission-page">
 
   <!-- nav bar -->
-<nav class="navbar navbar-expand-lg navbar-dark" id="navbar-container">
-  <div class="container">
-    <img src="src/Images/MusicFeedbackBanner.jpg" alt="Music Feedback logo">
-    <!-- drop down menu on collapse -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- nav bar items -->
-    <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" target="_blank" href="https://discord.com/invite/USgMVqc9yh">Discord</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="submission.html">Submit A Song</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<section id="submission-section">
-
-  <!-- left side -->
-  <div class="submission-container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-md-6 text-light" id="left-submission-container">
-        <h2 style="margin-bottom:25px;">SUBMIT A SONG</h2>
-        <p>Playlist submissions are OPEN!<p>
-        <p>
-          We are currently accepting new submissions to be shared on our Spotify page. If you have not already, 
-          join the server and fill out the submission form with your Discord username and a public 
-          Spotify link to your song.</p>
-          <a href="https://support.discord.com/hc/article_attachments/14484974734871" style="font-style:italic;font-size:15px;color:rgb(78, 78, 78);" target="_blank">Trouble finding your username?</p>
-          <div class="container text-center">
-            <a href="https://open.spotify.com/playlist/2MVR9HI4elqTYjUMlEAY5k?si=2ded0b30f8f34502" target="_blank" style="color:white;">
-              <img src="src/Images/Spotify.png" alt="Spotify Logo" style="height: 25px; width: auto;">Spotify</a></p>
-              </a>
-          </div>
-      </div>
-
-      <!-- right side -->
-      <div class="col-md-6" id="right-submission-container">
-        <h2 style="margin-bottom:25px;">SUBMISSION</h2>
-        <!-- Message that shows when screen collapsed -->
-        <div>
-          <p class="collapsed-message">Fill out the form with your Discord username and Spotify link. You must already be a member of 
-            the Discord Server.
-          </p>
-        </div>
-
-        <form id="submission-form" action="src/php/submit_song.php" method="post">
-          <div class="mb-3">
-              <label for="discord_user" class="form-label">Discord Username: <span style="color:red">*</span></label>
-              <input type="text" class="form-control custom-input" id="discord_user" name="discord_user" placeholder="ex: _plsdontmessageme_" required>
-          </div>
-          <div class="mb-3">
-              <label for="song_link" class="form-label">Spotify Link: <span style="color:red">*</span></label>
-              <input type="text" class="form-control custom-input" id="song_link" name="song_link" placeholder="ex: https://open.spotify.com/track/xxxx" required required>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-  
-      <!-- submission confirmation message -->
-      <div id="submission-message" style="display: none;" class="mt-3 text-success">
-        <p><strong>Submission sent!</strong> Please allow a week for your song to appear on the playlist.</p>
-        <a class="btn btn-primary rounded-pill lead my-4" href="index.html">Return Home</a>
-      </div>
-  
-      <!-- submission rejection-->
-      <div id="rejection-message" style="display: none;" class="mt-3 text-success">
-        <p><strong>Submission not sent!</strong> Please check that you spelled your username correctly and are a current member of the Music Feedback Discord.</p>
-        <div class="button-group">
-          <a class="btn btn-primary rounded-pill lead my-4" href="submission.html">Submit Again</a>
-          <a class="btn btn-primary rounded-pill lead my-4 return-home" id="return-home" href="index.html">Return Home</a>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark" id="navbar-container">
+    <div class="container">
+      <img src="src/Images/MusicFeedbackBanner.jpg" alt="Music Feedback logo">
+      <!-- drop down menu on collapse -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- nav bar items -->
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://discord.com/invite/USgMVqc9yh">Discord</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="submission.html">Submit A Song</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
+  <!-- Submission form -->
+  <section id="submission-section">
+    <!-- left side -->
+    <div class="submission-container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 text-light" id="left-submission-container">
+                <h2 style="margin-bottom:25px;">SUBMIT A SONG</h2>
+                <p>Playlist submissions are OPEN!</p>
+                <p>
+                    We are currently accepting new submissions to be shared on our Spotify page. If you have not already,
+                    join the server and fill out the submission form with your Discord username and a public
+                    Spotify link to your song.
+                </p>
+                <div>
+                  <a href="https://support.discord.com/hc/article_attachments/14484974734871"
+                      style="font-style:italic;font-size:15px;color:rgb(78, 78, 78)" target="_blank">
+                      Trouble finding your username?
+                  </a>
+                </div>
+                <div class="container text-center" style="margin-top:20px;">
+                    <a href="https://open.spotify.com/playlist/2MVR9HI4elqTYjUMlEAY5k?si=2ded0b30f8f34502"
+                        target="_blank" style="color:white;">
+                        <img src="src/Images/Spotify.png" alt="Spotify Logo" style="height: 25px; width: auto;">Spotify
+                    </a>
+                </div>
+            </div>
 
+            <!-- right side -->
+            <div class="col-md-6" id="right-submission-container">
+                <h2 style="margin-bottom:25px;">SUBMISSION</h2>
+                <!-- Message that shows when screen collapsed -->
+                <div>
+                    <p class="collapsed-message">
+                        Fill out the form with your Discord username and Spotify link. You must already be a member of
+                        the Discord Server.
+                    </p>
+                </div>
 
+                <form id="submission-form" action="src/php/submit_song.php" method="post">
+                    <div class="mb-3">
+                        <label for="discord_user" class="form-label">Discord Username: <span style="color:red">*</span></label>
+                        <input type="text" class="form-control custom-input" id="discord_user" name="discord_user"
+                            placeholder="ex: _plsdontmessageme_" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="song_link" class="form-label">Spotify Link: <span style="color:red">*</span></label>
+                        <input type="text" class="form-control custom-input" id="song_link" name="song_link"
+                            placeholder="ex: https://open.spotify.com/track/xxxx" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
 
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <!-- submission confirmation message -->
+                <div id="submission-message" style="display: none;" class="mt-3 text-success">
+                    <p><strong>Submission sent!</strong> Please allow a week for your song to appear on the playlist.</p>
+                    <a class="btn btn-primary rounded-pill lead my-4" href="index.html">Return Home</a>
+                </div>
 
-<!-- Reload form section -->
-<script>
-// Function to handle form submission
-$(document).ready(function() {
-    $('#submission-form').submit(function(e) {
-        e.preventDefault(); // Prevent the default form submission
+                <!-- submission rejection -->
+                <div id="rejection-message" style="display: none;" class="mt-3 text-success">
+                    <p><strong>Submission not sent!</strong> Please check that you spelled your username correctly and are a current member of the Music Feedback Discord.</p>
+                    <div class="button-group">
+                        <a class="btn btn-primary rounded-pill lead my-4" href="submission.html">Submit Again</a>
+                        <a class="btn btn-primary rounded-pill lead my-4 return-home" id="return-home" href="index.html">Return Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
 
-        // Serialize form data
-        var formData = $(this).serialize();
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        // Send AJAX request
-        $.ajax({
-            type: 'POST',
-            url: $(this).attr('action'), // URL to submit form data
-            data: formData,
-            success: function(response) {
-                // Hide the form
-                $('#submission-form').hide();
+  <!-- Reload form section -->
+  <script>
+  // Function to handle form submission
+  $(document).ready(function() {
+      $('#submission-form').submit(function(e) {
+          e.preventDefault(); // Prevent the default form submission
 
-                // Check the response
-                console.log(response);
+          // Serialize form data
+          var formData = $(this).serialize();
 
-                if (response.trim() === 'success') {
-                    // On success, display submission confirmation
-                    $('#submission-message').show();
-                    $('#rejection-message').hide(); // rejection message is hidden
-                    //  reset form fields
-                    $('#submission-form')[0].reset();
-                } else {
-                    // show rejection message and hide success message
-                    $('#submission-message').hide();
-                    $('#rejection-message').show();
-                }
-            },
-            error: function(xhr, status, error) {
-                // Log the error for debugging
-                console.error(xhr.responseText);
+          // Send AJAX request
+          $.ajax({
+              type: 'POST',
+              url: $(this).attr('action'), // URL to submit form data
+              data: formData,
+              success: function(response) {
+                  // Hide the form
+                  $('#submission-form').hide();
 
-                // Show rejection message on error and hide success message
-                $('#submission-message').hide();
-                $('#rejection-message').show();
-            }
-        });
-    });
-});
-</script>
+                  // Check the response
+                  console.log(response);
 
+                  if (response.trim() === 'success') {
+                      // On success, display submission confirmation
+                      $('#submission-message').show();
+                      $('#rejection-message').hide(); // rejection message is hidden
+                      //  reset form fields
+                      $('#submission-form')[0].reset();
+                  } else {
+                      // show rejection message and hide success message
+                      $('#submission-message').hide();
+                      $('#rejection-message').show();
+                  }
+              },
+              error: function(xhr, status, error) {
+                  // Log the error for debugging
+                  console.error(xhr.responseText);
 
+                  // Show rejection message on error and hide success message
+                  $('#submission-message').hide();
+                  $('#rejection-message').show();
+              }
+          });
+      });
+  });
+  </script>
 
 </body>
 
