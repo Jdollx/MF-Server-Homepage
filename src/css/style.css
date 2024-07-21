@@ -388,6 +388,12 @@ h2 {
     width: 560px;
   }
 
+  /* mf fest poster */
+  .mf-fest-img {
+    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+  }
+
 /* FAQ */
 /* inside accordion (answer) */
 .accordion-item {
