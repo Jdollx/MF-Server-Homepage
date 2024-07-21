@@ -52,7 +52,7 @@
   </nav>
 
   <!-- Submission form -->
-  <section id="submission-section">
+  <section class="fade-in" id="submission-section">
     <!-- left side -->
     <div class="submission-container">
         <div class="row justify-content-center align-items-center">
@@ -171,6 +171,20 @@
       });
   });
   </script>
+
+  <script>
+    // Function to handle the fade-in effect
+    function handleFadeIn() {
+        const section = document.getElementById('submission-section');
+        // Add the 'visible' class to trigger the fade-in effect
+        section.classList.add('visible');
+    }
+
+    // Call the function when the page loads
+    document.addEventListener('DOMContentLoaded', handleFadeIn);
+  </script>
+
+  
 
 </body>
 
