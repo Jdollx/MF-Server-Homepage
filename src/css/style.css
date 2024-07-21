@@ -309,6 +309,11 @@ h2 {
     padding-bottom: 25px;
 }
 
+/* gets rid of padding on last event */
+.event-description:last-of-type {
+    padding-bottom: 0;
+}
+
 /* resize event image */
 .event-image {
     height:250px;
