@@ -567,7 +567,13 @@ h2 {
     width: 30%;
 }
 
-
+/* footer icons */
+.footer-icon i {
+    font-size:28px;
+}
+.footer-icon i:hover {
+    color:#3BC4ED;
+}
 
 /* Scroll to top button */
 #myBtn {
