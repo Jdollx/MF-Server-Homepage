@@ -362,7 +362,6 @@ h2 {
     height:250px;
     width:auto;
     border-radius: 12px;
-    text-align: center;
     transition: transform 0.3s ease;
 }
 
@@ -415,7 +414,7 @@ h2 {
     background-color: rgb(241, 241, 241);
     padding:25px;
     border-radius: 12px;
-    width: 560px;
+    width: 500px;
 }
 
 @media (max-width: 768px) {
