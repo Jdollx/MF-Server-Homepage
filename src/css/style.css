@@ -43,7 +43,7 @@ img {
     .navbar-nav .nav-item .nav-link {
         color: #808080; /* Change link color */
         display: block;
-        text-align: center;
+        padding-left: 25px;
     }
 
     .navbar-nav .nav-item .nav-link:hover {
@@ -68,7 +68,6 @@ img {
         transition: height 0.3s ease;
     }
 }
-
 
 /* MF logo header image */
 .container img {
@@ -157,10 +156,8 @@ p {
 }
 
 /* position card row more in center */
-.row.g-0 {
-    margin-left: 100px;
-    margin-right:100px;
-
+.services-container {
+    width:75%;
 }
 
 /* clears default border around cards*/
@@ -419,7 +416,16 @@ h2 {
     padding:25px;
     border-radius: 12px;
     width: 560px;
+}
+
+@media (max-width: 768px) {
+    .events-titles, .event-description, .event-box, .youtube {
+      /* Ensure these elements are visible and styled appropriately */
+      width:100% /* or any other display value that suits your layout */
+    }
   }
+
+  
 
   /* mf fest poster */
   .mf-fest-img {

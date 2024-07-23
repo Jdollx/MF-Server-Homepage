@@ -79,23 +79,23 @@
   <!-- mainpage graphic -->
   <section class="bg-dark text-light p-5 text-center" id="main-graphic-container" id="main-graphic-section">
     <div class="container">
-      <div class="d-sm-flex align-items-center justify-content-between"> 
+      <div class="d-flex flex-column-reverse flex-sm-row align-items-center justify-content-between">
         <div>
           <h1>A Music Community</h1>
           <p id="slogan">Home to 7,000+ Musicians Worldwide</p>
           <a class="btn btn-primary rounded-pill lead my-4" target="_blank" href="https://discord.com/invite/USgMVqc9yh">Join the Discord</a><br>
         </div>
-        <img class="img-fluid d-none d-sm-block" id="characters" src="src/Images/Characters.png" alt="Cloud music characters"
+        <img class="img-fluid d-sm-block" id="characters" src="src/Images/Characters.png" alt="Cloud music characters"
       </div>
     </div>
   </section>
 
   <!-- columns of our services-->
   <section class="text-dark p-5 fade-in" id="services-section">
-    <div class="container">
+    <div class="container services-container">
       <div class="row g-0">
         <!-- FEEDBACK -->
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6 col-12">
           <div class="card text-dark">
             <div class="card-body text-center">
               <div class="card-icon">
@@ -111,7 +111,7 @@
           </div>
         </div>
         <!-- RESOURCES -->
-        <div class="col-md-3">
+        <div class="col-md-3 col-12">
           <div class="card text-dark">
             <div class="card-body text-center">
               <div class="card-icon">
@@ -127,7 +127,7 @@
           </div>
         </div>
         <!-- EVENTS -->
-        <div class="col-md-3">
+        <div class="col-md-3 col-12">
           <div class="card text-dark">
             <div class="card-body text-center">
               <div class="card-icon">
@@ -144,16 +144,16 @@
           </div>
         </div>
         <!-- PROMOTION -->
-        <div class="col-md-3">
+        <div class="col-md-3 col-12">
           <div class="card text-dark">
             <div class="card-body text-center">
               <div class="card-icon">
                 <i class="bi bi-briefcase"></i>
               </div>
-              <h4 class="card-title mb-3">
+              <h4 class="card-title mb-3 text-nowrap">
                 PROMOTION
               </h4>
-              <p>
+              <p class="">
                 Multiple channels available for music and service promotion.
               </p>
             </div>
@@ -170,13 +170,13 @@
         <div class="row no-gutters align-items-center justify-content-center fade-in">
           <div class="col-md-6 text-center">
             <!-- Purple square container -->
-            <div class="purple-square">
+            <div class="purple-square d-none d-sm-block">
               <!-- Replace with your SoundCloud iframe embed code -->
               <iframe class="iframe-content" src="https://open.spotify.com/embed/playlist/2MVR9HI4elqTYjUMlEAY5k?theme=0" width="85%" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
           </div>
           <div class="col-md-6 align-items-center" style="padding-left:25px;">
-            <h2 class="left mb-3">All <span style="color:#EF8CDC;font-size: 50px;">genres.</span><br>
+            <h2 class="left mb-3 d-none d-sm-block">All <span style="color:#EF8CDC;font-size: 50px;">genres.</span><br>
               All <span style="color:#EF8CDC;font-size: 50px;">skill levels.</span><br>
               All <span style="color:#EF8CDC; font-size: 50px;">music.</span></h2>
             <p class="text-light left">Discover our artists on 
@@ -197,7 +197,7 @@
           
           <!-- AOTW -->
           <div class="row mb-5 fade-in">
-            <div class="col-md-6">
+            <div class="col-md-6 col-12">
               <div>
                 <h3 class="events-titles">Artist of the Week</h3>
                 <p class="event-description">Artist of the Week is a biweekly event celebrating a server member who has recently finished or 
@@ -207,16 +207,16 @@
                 <a href="https://discord.com/channels/732355624259813531/733332471525015642" class="read-more-events" target="_blank">Read more<i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
-            <div class="col-md-6">
-              <img src="src/Images/1.png" class="img-fluid event-image" alt="AOTW Image" loading="lazy">
+            <div class="col-md-6 d-none d-sm-block">
+              <img src="src/Images/1.png" class="img-fluid event-image d-sm-block" alt="AOTW Image" loading="lazy">
             </div>
           </div>
 
 
           <!-- Music Feedback Listening -->
           <div class="row mb-5 fade-in">
-            <div class="col-md-6 order-md-1 order-1">
-              <img src="src/Images/3.png" class="img-fluid event-image" alt="Music Feedback Listening Image" loading="lazy">
+            <div class="col-md-6 col-12 order-md-1 order-1">
+              <img src="src/Images/3.png" class="img-fluid event-image d-none d-sm-block" alt="Music Feedback Listening Image" loading="lazy">
             </div>
             <div class="col-md-6 order-md-2 order-2">
               <div>
@@ -233,7 +233,7 @@
 
           <!-- SSC -->
           <div class="row mb-5 fade-in">
-            <div class="col-md-6">
+            <div class="col-md-6 col-12">
               <div>
                 <h3 class="events-titles">Short Song Challenge</h3>
                 <p class="event-description">Short Song Challenge is a timed event where members must create a song based on a 
@@ -245,14 +245,14 @@
               </div>
             </div>
             <div class="col-md-6">
-              <img src="src/Images/2.png" class="img-fluid event-image" alt="Short Song Challenge Image" loading="lazy">
+              <img src="src/Images/2.png" class="img-fluid event-image d-none d-sm-block" alt="Short Song Challenge Image" loading="lazy">
             </div>
           </div>
 
           <!-- MF FEST -->
           <div class="row mb-5 fade-in">
-            <div class="col-md-6 order-md-1 order-1">
-              <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="col-md-6 col-12 order-md-1 order-1">
+              <div id="carouselExampleAutoplaying" class="carousel slide d-none d-md-block" data-bs-ride="carousel" data-bs-interval="5000">
                 <!-- Carousel Indicators -->
                 <ol class="carousel-indicators">
                   <li data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"></li>
@@ -260,15 +260,15 @@
                 </ol>
                 <div class="carousel-inner mf-fest-img">
                   <div class="carousel-item active w-100">
-                    <img src="src/Images/MFFest2021.png" class="d-block w-100" alt="Music Feedback Listening Image" loading="lazy">
+                    <img src="src/Images/MFFest2021.png" class="d-block w-100" alt="MF Fest 2021 banner" loading="lazy">
                   </div>
                   <div class="carousel-item mf-fest-img">
-                    <img src="src/Images/MFFest.png" class="d-block w-100" alt="Music Feedback Listening Image" loading="lazy">
+                    <img src="src/Images/MFFest.png" class="d-block w-100" alt="MF Fest 2022 banner" loading="lazy">
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 order-md-2 order-2">
+            <div class="col-md-6 col-12 order-md-2 order-2">
               <div class="event-box col-md-6 order-md-2 order-2">
                 <h3 class="events-titles">MF Fest 2021 & 2022</h3>
                 <p class="event-description">MF Fest was a summer event last held in 2022 to showcase the many special talents of our songwriters, 
@@ -278,7 +278,7 @@
                 </p>
               </div>
               <div class="iframe-wrapper" style="padding-top: 30px; border-radius: 12px;">
-                <iframe class="mf-fest-img" width="560" height="315" src="https://www.youtube.com/embed/-px90lFVb9k?si=37uE0bornkK0Im5Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="mf-fest-img youtube" width="560" height="315" src="https://www.youtube.com/embed/-px90lFVb9k?si=37uE0bornkK0Im5Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
             </div>
           </div>
@@ -730,11 +730,11 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row d-none d-sm-block">
         <div class="col-12">
           <!-- Carousel -->
           <div id="carousel-example-generic" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-inner banner-container">
+            <div class="carousel-inner banner-container d-none d-sm-block">
               <div class="carousel-item active">
                 <img src="src/Images/Subscriptions.png" class="d-block mx-auto" alt="Subscription Banner Options">
               </div>
