@@ -597,19 +597,26 @@ h2 {
 .collapsed-message {
     display: none;
   }
-
+/* formats right submission container on collapse */
 @media (max-width: 768px) {
 #left-submission-container {
     display: none;
+    }
+
+    .submission-container {
+        width:100%;
+    }
+
+    #right-submission-container {
+        width: 100%;
+        height:auto;
+        padding:25px;
     }
     .collapsed-message {
       display: block;
       font-size: 20px;
       color: black;
       margin: 25px 0;
-    }
-    #right-submission-container {
-        padding:25px;
     }
 }
 
