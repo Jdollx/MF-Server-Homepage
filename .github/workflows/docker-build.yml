@@ -25,10 +25,10 @@ jobs:
     - name: Build the Docker image
       run: docker build \
         --file Dockerfile \
-        --tag Jdollx/music-feedback-website:$(date +%s) \
+        --tag jdollx/music-feedback-website:$(date +%s) \
         .
 
     - name: Push the Docker image to Docker Hub
       run: |
-        docker tag Jdollx/music-feedback-website:$(date +%s) Jdollx/music-feedback-website:latest
-        docker push Jdollx/music-feedback-website:latest
+        docker tag jdollx/music-feedback-website:$(date +%s) jdollx/music-feedback-website:latest
+        docker push jdollx/music-feedback-website:latest
