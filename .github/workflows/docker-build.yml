@@ -30,5 +30,5 @@ jobs:
 
     - name: Push the Docker image to Docker Hub
       run: |
-        docker tag Jdollx/music-feedback-website:$(date +%s) my-dockerhub-username/music-feedback-website:latest
+        docker tag Jdollx/music-feedback-website:$(date +%s) Jdollx/music-feedback-website:latest
         docker push Jdollx/music-feedback-website:latest
