@@ -43,15 +43,11 @@ jobs:
           TOAST_ID: ${{ secrets.TOAST_ID }}
           SERVER_ID: ${{ secrets.SERVER_ID }}
         run: |
-          TIMESTAMP=$(date +%s)
           docker build \
             --file Dockerfile \
             --tag jdollx/music-feedback-website:latest \
-            --tag jdollx/music-feedback-website:$TIMESTAMP \
             .
 
       - name: Push Docker Images
         run: |
           docker push jdollx/music-feedback-website:latest
-          TIMESTAMP=$(date +%s)
-          docker push jdollx/music-feedback-website:$TIMESTAMP
