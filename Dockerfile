@@ -25,7 +25,7 @@ RUN composer install
 # Copy application files to the container
 COPY . .
 
-# Expose port 80 for the web server
+# Expose port 80 for the web server (localhost:8080)
 EXPOSE 80
 
 # Start Apache
