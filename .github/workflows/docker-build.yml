@@ -26,6 +26,20 @@ jobs:
         run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
       - name: Build Docker Image
+        run: |
+          docker buildx build \
+            --platform linux/amd64,linux/arm64 \
+            --file Dockerfile \
+            --tag jdollx/music-feedback-website:latest \
+            --tag jdollx/music-feedback-website:$(date +%s) \
+            .
+
+      - name: Push Docker Images
+        run: |
+          docker push jdollx/music-feedback-website:latest
+          docker push jdollx/music-feedback-website:$(date +%s)
+
+      - name: Run Docker Container
         env:
           USE: ${{ secrets.USE }}
           PASSWORD: ${{ secrets.PASSWORD }}
@@ -43,14 +57,20 @@ jobs:
           TOAST_ID: ${{ secrets.TOAST_ID }}
           SERVER_ID: ${{ secrets.SERVER_ID }}
         run: |
-          docker buildx build \
-            --platform linux/amd64,linux/arm64 \
-            --file Dockerfile \
-            --tag jdollx/music-feedback-website:latest \
-            --tag jdollx/music-feedback-website:$(date +%s) \
-            .
-
-
-      - name: Push Docker Images
-        run: |
-          docker push jdollx/music-feedback-website:latest
+          docker run -d \
+            -e USE="$USE" \
+            -e PASSWORD="$PASSWORD" \
+            -e DISCORDWIDGET="$DISCORDWIDGET" \
+            -e email="$email" \
+            -e email_password="$email_password" \
+            -e TOKEN="$TOKEN" \
+            -e JENN_ID="$JENN_ID" \
+            -e MAKI_ID="$MAKI_ID" \
+            -e STRIKE_ID="$STRIKE_ID" \
+            -e SONO_ID="$SONO_ID" \
+            -e TAV_ID="$TAV_ID" \
+            -e DAVID_ID="$DAVID_ID" \
+            -e AMAZE_ID="$AMAZE_ID" \
+            -e TOAST_ID="$TOAST_ID" \
+            -e SERVER_ID="$SERVER_ID" \
+            jdollx/music-feedback-website:latest
