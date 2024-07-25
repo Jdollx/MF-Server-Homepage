@@ -1,12 +1,15 @@
 version: '3.8'
+
 services:
   app:
     build:
       context: .
+      dockerfile: Dockerfile
     image: music-feedback-website
     env_file:
-      - config/.env
+      - ./config/.env
     volumes:
-      - ./config/.env:/var/www/html/.env
+      - /Users/doll/Desktop/programming/MF-Server-Webpage/config/.env:/my_project/.env:ro
+      - .:/var/www/html
     ports:
       - "80:80"

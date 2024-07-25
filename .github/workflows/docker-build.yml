@@ -25,12 +25,17 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-      - name: Build and Push Multi-Architecture Docker Image
+      - name: Set up Docker Compose
+        run: sudo apt-get install docker-compose -y
+
+      - name: Build Docker Compose Image
+        run: docker-compose build
+
+      - name: Tag Docker Image
         run: |
-          docker buildx build \
-            --file Dockerfile \
-            --tag jdollx/music-feedback-website:$(date +%s) \
-            --tag jdollx/music-feedback-website:latest \
-            --push \
-            --platform linux/amd64,linux/arm64,linux/arm/v7 \
-            .
+          docker tag jdollx/music-feedback-website:latest jdollx/music-feedback-website:$(date +%s)
+
+      - name: Push Docker Images
+        run: |
+          docker push jdollx/music-feedback-website:latest
+          docker push jdollx/music-feedback-website:$(date +%s)
