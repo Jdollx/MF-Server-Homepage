@@ -28,7 +28,39 @@ jobs:
         run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
       - name: Build Docker Compose services
+        env:
+          USE: ${{ secrets.USE }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
+          email: ${{ secrets.email }}
+          email_password: ${{ secrets.email_password }}
+          TOKEN: ${{ secrets.TOKEN }}
+          JENN_ID: ${{ secrets.JENN_ID }}
+          MAKI_ID: ${{ secrets.MAKI_ID }}
+          STRIKE_ID: ${{ secrets.STRIKE_ID }}
+          SONO_ID: ${{ secrets.SONO_ID }}
+          TAV_ID: ${{ secrets.TAV_ID }}
+          DAVID_ID: ${{ secrets.DAVID_ID }}
+          AMAZE_ID: ${{ secrets.AMAZE_ID }}
+          TOAST_ID: ${{ secrets.TOAST_ID }}
+          SERVER_ID: ${{ secrets.SERVER_ID }}
         run: docker-compose build
 
       - name: Push Docker Compose images
+        env:
+          USE: ${{ secrets.USE }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
+          email: ${{ secrets.email }}
+          email_password: ${{ secrets.email_password }}
+          TOKEN: ${{ secrets.TOKEN }}
+          JENN_ID: ${{ secrets.JENN_ID }}
+          MAKI_ID: ${{ secrets.MAKI_ID }}
+          STRIKE_ID: ${{ secrets.STRIKE_ID }}
+          SONO_ID: ${{ secrets.SONO_ID }}
+          TAV_ID: ${{ secrets.TAV_ID }}
+          DAVID_ID: ${{ secrets.DAVID_ID }}
+          AMAZE_ID: ${{ secrets.AMAZE_ID }}
+          TOAST_ID: ${{ secrets.TOAST_ID }}
+          SERVER_ID: ${{ secrets.SERVER_ID }}
         run: docker-compose push
