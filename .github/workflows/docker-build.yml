@@ -50,7 +50,7 @@ jobs:
             --tag jdollx/music-feedback-website:$(date +%s) \
             .
 
+
       - name: Push Docker Images
         run: |
           docker push jdollx/music-feedback-website:latest
-          docker push jdollx/music-feedback-website:$(date +%s)
