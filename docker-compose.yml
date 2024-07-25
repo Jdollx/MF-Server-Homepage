@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  web:
+    image: music-feedback-website
+    env_file:
+      - config/.env
+    ports:
+      - "8080:80"

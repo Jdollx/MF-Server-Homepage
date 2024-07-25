@@ -1,15 +1,12 @@
-name: Docker Image CI
+name: Docker Deployment
 
 on:
   push:
     branches:
       - "main"
-  pull_request:
-    branches:
-      - "main"
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,58 +16,18 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      - name: Set up Docker Compose
+        uses: docker/compose-action@v2
+
       - name: Login to Docker Hub
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-      - name: Build Docker Image
-        run: |
-          docker buildx build \
-            --platform linux/amd64,linux/arm64 \
-            --file Dockerfile \
-            --tag jdollx/music-feedback-website:latest \
-            --tag jdollx/music-feedback-website:$(date +%s) \
-            .
+      - name: Build Docker Compose services
+        run: docker-compose build
 
-      - name: Push Docker Images
+      - name: Push Docker Compose images
         run: |
-          docker push jdollx/music-feedback-website:latest
-          docker push jdollx/music-feedback-website:$(date +%s)
-
-      - name: Run Docker Container
-        env:
-          USE: ${{ secrets.USE }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-          DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
-          email: ${{ secrets.email }}
-          email_password: ${{ secrets.email_password }}
-          TOKEN: ${{ secrets.TOKEN }}
-          JENN_ID: ${{ secrets.JENN_ID }}
-          MAKI_ID: ${{ secrets.MAKI_ID }}
-          STRIKE_ID: ${{ secrets.STRIKE_ID }}
-          SONO_ID: ${{ secrets.SONO_ID }}
-          TAV_ID: ${{ secrets.TAV_ID }}
-          DAVID_ID: ${{ secrets.DAVID_ID }}
-          AMAZE_ID: ${{ secrets.AMAZE_ID }}
-          TOAST_ID: ${{ secrets.TOAST_ID }}
-          SERVER_ID: ${{ secrets.SERVER_ID }}
-        run: |
-          docker run -d \
-            -e USE="$USE" \
-            -e PASSWORD="$PASSWORD" \
-            -e DISCORDWIDGET="$DISCORDWIDGET" \
-            -e email="$email" \
-            -e email_password="$email_password" \
-            -e TOKEN="$TOKEN" \
-            -e JENN_ID="$JENN_ID" \
-            -e MAKI_ID="$MAKI_ID" \
-            -e STRIKE_ID="$STRIKE_ID" \
-            -e SONO_ID="$SONO_ID" \
-            -e TAV_ID="$TAV_ID" \
-            -e DAVID_ID="$DAVID_ID" \
-            -e AMAZE_ID="$AMAZE_ID" \
-            -e TOAST_ID="$TOAST_ID" \
-            -e SERVER_ID="$SERVER_ID" \
-            jdollx/music-feedback-website:latest
+          docker-compose push
