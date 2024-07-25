@@ -43,11 +43,14 @@ jobs:
           TOAST_ID: ${{ secrets.TOAST_ID }}
           SERVER_ID: ${{ secrets.SERVER_ID }}
         run: |
-          docker build \
+          docker buildx build \
+            --platform linux/amd64,linux/arm64 \
             --file Dockerfile \
             --tag jdollx/music-feedback-website:latest \
+            --tag jdollx/music-feedback-website:$(date +%s) \
             .
 
       - name: Push Docker Images
         run: |
           docker push jdollx/music-feedback-website:latest
+          docker push jdollx/music-feedback-website:$(date +%s)
