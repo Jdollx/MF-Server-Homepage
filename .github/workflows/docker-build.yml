@@ -25,10 +25,7 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-      - name: Set up Docker Compose
-        run: sudo apt-get install docker-compose -y
-
-      - name: Build Docker Compose Image
+      - name: Build Docker Image
         env:
           USE: ${{ secrets.USE }}
           PASSWORD: ${{ secrets.PASSWORD }}
@@ -45,11 +42,12 @@ jobs:
           AMAZE_ID: ${{ secrets.AMAZE_ID }}
           TOAST_ID: ${{ secrets.TOAST_ID }}
           SERVER_ID: ${{ secrets.SERVER_ID }}
-        run: docker-compose build
-
-      - name: Tag Docker Image
         run: |
-          docker tag music-feedback-website:latest jdollx/music-feedback-website:$(date +%s)
+          docker build \
+            --file Dockerfile \
+            --tag jdollx/music-feedback-website:latest \
+            --tag jdollx/music-feedback-website:$(date +%s) \
+            .
 
       - name: Push Docker Images
         run: |
