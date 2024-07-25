@@ -29,11 +29,27 @@ jobs:
         run: sudo apt-get install docker-compose -y
 
       - name: Build Docker Compose Image
+        env:
+          USE: ${{ secrets.USE }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
+          email: ${{ secrets.email }}
+          email_password: ${{ secrets.email_password }}
+          TOKEN: ${{ secrets.TOKEN }}
+          JENN_ID: ${{ secrets.JENN_ID }}
+          MAKI_ID: ${{ secrets.MAKI_ID }}
+          STRIKE_ID: ${{ secrets.STRIKE_ID }}
+          SONO_ID: ${{ secrets.SONO_ID }}
+          TAV_ID: ${{ secrets.TAV_ID }}
+          DAVID_ID: ${{ secrets.DAVID_ID }}
+          AMAZE_ID: ${{ secrets.AMAZE_ID }}
+          TOAST_ID: ${{ secrets.TOAST_ID }}
+          SERVER_ID: ${{ secrets.SERVER_ID }}
         run: docker-compose build
 
       - name: Tag Docker Image
         run: |
-          docker tag jdollx/music-feedback-website:latest jdollx/music-feedback-website:$(date +%s)
+          docker tag music-feedback-website:latest jdollx/music-feedback-website:$(date +%s)
 
       - name: Push Docker Images
         run: |
