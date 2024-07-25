@@ -9,7 +9,6 @@ services:
     env_file:
       - ./config/.env
     volumes:
-      - /Users/doll/Desktop/programming/MF-Server-Webpage/config/.env:/my_project/.env:ro
       - .:/var/www/html
     ports:
       - "80:80"
