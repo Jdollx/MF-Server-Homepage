@@ -54,20 +54,21 @@ jobs:
         SERVER_ID: ${{ secrets.SERVER_ID }}
       run: |
         docker run \
-          -e USE=$USE \
-          -e PASSWORD=$PASSWORD \
-          -e DISCORDWIDGET=$DISCORDWIDGET \
-          -e EMAIL=$EMAIL \
-          -e EMAIL_PASSWORD=$EMAIL_PASSWORD \
-          -e TOKEN=$TOKEN \
-          -e JENN_ID=$JENN_ID \
-          -e MAKI_ID=$MAKI_ID \
-          -e STRIKE_ID=$STRIKE_ID \
-          -e SONO_ID=$SONO_ID \
-          -e TAV_ID=$TAV_ID \
-          -e DAVID_ID=$DAVID_ID \
-          -e AMAZE_ID=$AMAZE_ID \
-          -e TOAST_ID=$TOAST_ID \
-          -e SERVER_ID=$SERVER_ID \
+          --name music-feedback-website \
+          -e USE="$USE" \
+          -e PASSWORD="$PASSWORD" \
+          -e DISCORDWIDGET="$DISCORDWIDGET" \
+          -e EMAIL="$EMAIL" \
+          -e EMAIL_PASSWORD="$EMAIL_PASSWORD" \
+          -e TOKEN="$TOKEN" \
+          -e JENN_ID="$JENN_ID" \
+          -e MAKI_ID="$MAKI_ID" \
+          -e STRIKE_ID="$STRIKE_ID" \
+          -e SONO_ID="$SONO_ID" \
+          -e TAV_ID="$TAV_ID" \
+          -e DAVID_ID="$DAVID_ID" \
+          -e AMAZE_ID="$AMAZE_ID" \
+          -e TOAST_ID="$TOAST_ID" \
+          -e SERVER_ID="$SERVER_ID" \
           -p 8080:80 \
           jdollx/music-feedback-website:latest
