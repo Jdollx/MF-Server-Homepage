@@ -2,9 +2,9 @@ version: '3'
 services:
   web:
     build:
-      image: jdollx/music-feedback-website
       context: . 
       dockerfile: Dockerfile
+    image: jdollx/music-feedback-website
     volumes:
       - ./config:/var/www/html/config
     ports:
