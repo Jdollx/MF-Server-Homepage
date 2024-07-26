@@ -47,6 +47,6 @@ jobs:
         sudo chmod +x /usr/local/bin/docker-compose
         docker-compose --version
 
-    - name: Deploy with Docker Compose
+    - name: Deploy with Docker Swarm
       run: |
-        docker-compose -f docker-compose.yml up -d
+        docker stack deploy -c docker-compose.yml my_stack

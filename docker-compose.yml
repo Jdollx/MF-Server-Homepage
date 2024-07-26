@@ -1,11 +1,15 @@
-version: '3'
+version: '3.7'
+
 services:
   web:
-    build:
-      context: . 
-      dockerfile: Dockerfile
-    image: jdollx/music-feedback-website
-    volumes:
-      - ./config/.env:/var/www/html/.env
+    image: music-feedback-website
+    secrets:
+      - my_env_file
+    deploy:
+      replicas: 3
     ports:
-      - "8080:80"
+      - "8080:80
+
+secrets:
+  my_env_file:
+    external: true
