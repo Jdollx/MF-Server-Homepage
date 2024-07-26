@@ -22,52 +22,13 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-      - name: Build Docker Image
-        env:
-          USE: ${{ secrets.USE }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-          DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
-          EMAIL: ${{ secrets.EMAIL }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          TOKEN: ${{ secrets.TOKEN }}
-          JENN_ID: ${{ secrets.JENN_ID }}
-          MAKI_ID: ${{ secrets.MAKI_ID }}
-          STRIKE_ID: ${{ secrets.STRIKE_ID }}
-          SONO_ID: ${{ secrets.SONO_ID }}
-          TAV_ID: ${{ secrets.TAV_ID }}
-          DAVID_ID: ${{ secrets.DAVID_ID }}
-          AMAZE_ID: ${{ secrets.AMAZE_ID }}
-          TOAST_ID: ${{ secrets.TOAST_ID }}
-          SERVER_ID: ${{ secrets.SERVER_ID }}
+      - name: Build Docker image
         run: |
-          docker buildx build \
-            --build-arg USE=${USE} \
-            --build-arg PASSWORD=${PASSWORD} \
-            --build-arg DISCORDWIDGET=${DISCORDWIDGET} \
-            --build-arg EMAIL=${EMAIL} \
-            --build-arg EMAIL_PASSWORD=${EMAIL_PASSWORD} \
-            --build-arg TOKEN=${TOKEN} \
-            --build-arg JENN_ID=${JENN_ID} \
-            --build-arg MAKI_ID=${MAKI_ID} \
-            --build-arg STRIKE_ID=${STRIKE_ID} \
-            --build-arg SONO_ID=${SONO_ID} \
-            --build-arg TAV_ID=${TAV_ID} \
-            --build-arg DAVID_ID=${DAVID_ID} \
-            --build-arg AMAZE_ID=${AMAZE_ID} \
-            --build-arg TOAST_ID=${TOAST_ID} \
-            --build-arg SERVER_ID=${SERVER_ID} \
-            -t jdollx/music-feedback-website:latest \
-            .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/music-feedback-website:latest .
 
-      - name: Push Docker Image
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Push Docker image
         run: |
-          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker tag music-feedback-website:latest $DOCKER_USERNAME/music-feedback-website:latest
-          docker push $DOCKER_USERNAME/music-feedback-website:latest
-          docker logout
+          docker push ${{ secrets.DOCKER_USERNAME }}/music-feedback-website:latest
 
       - name: Run Docker Container
         env:
@@ -104,5 +65,5 @@ jobs:
             -e TOAST_ID="$TOAST_ID" \
             -e SERVER_ID="$SERVER_ID" \
             -p 8080:80 \
-            --name music-feedback-website \
-            jdollx/music-feedback-website:latest
+            --name my-music-app \
+            ${{ secrets.DOCKER_USERNAME }}/music-feedback-website:latest
