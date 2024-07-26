@@ -13,7 +13,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Docker image
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Docker Hub
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+      - name: Pull Docker Image
+        run: |
+          docker pull $DOCKER_USERNAME/music-feedback-website:latest
+
+      - name: Run Docker Container
         env:
           USE: ${{ secrets.USE }}
           PASSWORD: ${{ secrets.PASSWORD }}
@@ -30,29 +43,23 @@ jobs:
           AMAZE_ID: ${{ secrets.AMAZE_ID }}
           TOAST_ID: ${{ secrets.TOAST_ID }}
           SERVER_ID: ${{ secrets.SERVER_ID }}
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          set -e
-          docker build \
-            --build-arg USE=${USE} \
-            --build-arg PASSWORD=${PASSWORD} \
-            --build-arg DISCORDWIDGET=${DISCORDWIDGET} \
-            --build-arg EMAIL=${EMAIL} \
-            --build-arg EMAIL_PASSWORD=${EMAIL_PASSWORD} \
-            --build-arg TOKEN=${TOKEN} \
-            --build-arg JENN_ID=${JENN_ID} \
-            --build-arg MAKI_ID=${MAKI_ID} \
-            --build-arg STRIKE_ID=${STRIKE_ID} \
-            --build-arg SONO_ID=${SONO_ID} \
-            --build-arg TAV_ID=${TAV_ID} \
-            --build-arg DAVID_ID=${DAVID_ID} \
-            --build-arg AMAZE_ID=${AMAZE_ID} \
-            --build-arg TOAST_ID=${TOAST_ID} \
-            --build-arg SERVER_ID=${SERVER_ID} \
-            -t music-feedback-website \
-            .
-          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker tag music-feedback-website $DOCKER_USERNAME/music-feedback-website:latest
-          docker push $DOCKER_USERNAME/music-feedback-website:latest
-          docker logout
+          docker run -d \
+            -e USE="$USE" \
+            -e PASSWORD="$PASSWORD" \
+            -e DISCORDWIDGET="$DISCORDWIDGET" \
+            -e EMAIL="$EMAIL" \
+            -e EMAIL_PASSWORD="$EMAIL_PASSWORD" \
+            -e TOKEN="$TOKEN" \
+            -e JENN_ID="$JENN_ID" \
+            -e MAKI_ID="$MAKI_ID" \
+            -e STRIKE_ID="$STRIKE_ID" \
+            -e SONO_ID="$SONO_ID" \
+            -e TAV_ID="$TAV_ID" \
+            -e DAVID_ID="$DAVID_ID" \
+            -e AMAZE_ID="$AMAZE_ID" \
+            -e TOAST_ID="$TOAST_ID" \
+            -e SERVER_ID="$SERVER_ID" \
+            -p 8080:80 \
+            --name my-music-app \
+            $DOCKER_USERNAME/music-feedback-website:latest
