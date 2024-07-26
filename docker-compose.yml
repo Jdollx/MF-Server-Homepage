@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    image: jdollx/music-feedback-website
+    volumes:
+      - ./config:/var/www/html/config
+    ports:
+      - "8080:80"
