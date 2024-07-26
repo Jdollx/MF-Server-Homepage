@@ -27,8 +27,8 @@ jobs:
           USE: ${{ secrets.USE }}
           PASSWORD: ${{ secrets.PASSWORD }}
           DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
-          email: ${{ secrets.email }}
-          email_password: ${{ secrets.email_password }}
+          EMAIL: ${{ secrets.email }}
+          EMAIL_PASSWORD: ${{ secrets.email_password }}
           TOKEN: ${{ secrets.TOKEN }}
           JENN_ID: ${{ secrets.JENN_ID }}
           MAKI_ID: ${{ secrets.MAKI_ID }}
@@ -39,7 +39,24 @@ jobs:
           AMAZE_ID: ${{ secrets.AMAZE_ID }}
           TOAST_ID: ${{ secrets.TOAST_ID }}
           SERVER_ID: ${{ secrets.SERVER_ID }}
-        run: docker build -t music-feedback-website .
+        run: |
+          docker build \
+            --build-arg USE=${{ secrets.USE }} \
+            --build-arg PASSWORD=${{ secrets.PASSWORD }} \
+            --build-arg DISCORDWIDGET=${{ secrets.DISCORDWIDGET }} \
+            --build-arg EMAIL=${{ secrets.email }} \
+            --build-arg EMAIL_PASSWORD=${{ secrets.email_password }} \
+            --build-arg TOKEN=${{ secrets.TOKEN }} \
+            --build-arg JENN_ID=${{ secrets.JENN_ID }} \
+            --build-arg MAKI_ID=${{ secrets.MAKI_ID }} \
+            --build-arg STRIKE_ID=${{ secrets.STRIKE_ID }} \
+            --build-arg SONO_ID=${{ secrets.SONO_ID }} \
+            --build-arg TAV_ID=${{ secrets.TAV_ID }} \
+            --build-arg DAVID_ID=${{ secrets.DAVID_ID }} \
+            --build-arg AMAZE_ID=${{ secrets.AMAZE_ID }} \
+            --build-arg TOAST_ID=${{ secrets.TOAST_ID }} \
+            --build-arg SERVER_ID=${{ secrets.SERVER_ID }} \
+            -t music-feedback-website .
 
       - name: Push Docker image
         env:
@@ -47,4 +64,5 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker push music-feedback-website
+          docker tag music-feedback-website $DOCKER_USERNAME/music-feedback-website:latest
+          docker push $DOCKER_USERNAME/music-feedback-website:latest

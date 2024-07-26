@@ -4,6 +4,23 @@ FROM php:8.1-apache
 # Set the working directory in the container
 WORKDIR /var/www/html
 
+# Define build arguments
+ARG USE
+ARG PASSWORD
+ARG DISCORDWIDGET
+ARG EMAIL
+ARG EMAIL_PASSWORD
+ARG TOKEN
+ARG JENN_ID
+ARG MAKI_ID
+ARG STRIKE_ID
+ARG SONO_ID
+ARG TAV_ID
+ARG DAVID_ID
+ARG AMAZE_ID
+ARG TOAST_ID
+ARG SERVER_ID
+
 # Install dependencies required to run Composer
 RUN apt-get update && apt-get install -y \
     curl \
