@@ -34,6 +34,21 @@ jobs:
         docker-compose -f docker-compose.yml build
       env:
         DOCKER_BUILDKIT: 1
+        USE: ${{ secrets.USE }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+        DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
+        EMAIL: ${{ secrets.EMAIL }}
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        TOKEN: ${{ secrets.TOKEN }}
+        JENN_ID: ${{ secrets.JENN_ID }}
+        MAKI_ID: ${{ secrets.MAKI_ID }}
+        STRIKE_ID: ${{ secrets.STRIKE_ID }}
+        SONO_ID: ${{ secrets.SONO_ID }}
+        TAV_ID: ${{ secrets.TAV_ID }}
+        DAVID_ID: ${{ secrets.DAVID_ID }}
+        AMAZE_ID: ${{ secrets.AMAZE_ID }}
+        TOAST_ID: ${{ secrets.TOAST_ID }}
+        SERVER_ID: ${{ secrets.SERVER_ID }}
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
