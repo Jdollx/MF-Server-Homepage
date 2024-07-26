@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
     build:
+      image: jdollx/music-feedback-website
       context: . 
       dockerfile: Dockerfile
     volumes:
