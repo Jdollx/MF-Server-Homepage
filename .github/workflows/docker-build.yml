@@ -24,8 +24,8 @@ jobs:
 
     - name: Build Docker images
       run: |
-        docker build -t music-feedback-website .
-        docker push music-feedback-website
+        docker build -t jdollx/music-feedback-website .
+        docker push jdollx/music-feedback-website
 
   deploy:
     runs-on: ubuntu-latest
@@ -70,4 +70,4 @@ jobs:
           --env TOAST_ID=${{ secrets.TOAST_ID }} \
           --env SERVER_ID=${{ secrets.SERVER_ID }} \
           -p 8080:80 \
-          music-feedback-website
+          your-docker-username/music-feedback-website
