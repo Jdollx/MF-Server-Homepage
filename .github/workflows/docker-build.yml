@@ -65,5 +65,5 @@ jobs:
             -e TOAST_ID="$TOAST_ID" \
             -e SERVER_ID="$SERVER_ID" \
             -p 8080:80 \
-            --name my-music-app \
+            --name music-feedback-website \
             ${{ secrets.DOCKER_USERNAME }}/music-feedback-website:latest
