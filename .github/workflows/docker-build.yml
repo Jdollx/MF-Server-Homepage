@@ -22,16 +22,10 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Install Docker Compose
-      run: |
-        sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-        sudo chmod +x /usr/local/bin/docker-compose
-        docker-compose --version
-
     - name: Build Docker images
       run: |
-        docker-compose -f docker-compose.yml build
-        docker-compose -f docker-compose.yml push
+        docker build -t music-feedback-website .
+        docker push music-feedback-website
 
   deploy:
     runs-on: ubuntu-latest
@@ -41,12 +35,39 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install Docker Compose
+    - name: Deploy with Docker
+      env:
+        USE: ${{ secrets.USE }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+        DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
+        EMAIL: ${{ secrets.EMAIL }}
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        TOKEN: ${{ secrets.TOKEN }}
+        JENN_ID: ${{ secrets.JENN_ID }}
+        MAKI_ID: ${{ secrets.MAKI_ID }}
+        STRIKE_ID: ${{ secrets.STRIKE_ID }}
+        SONO_ID: ${{ secrets.SONO_ID }}
+        TAV_ID: ${{ secrets.TAV_ID }}
+        DAVID_ID: ${{ secrets.DAVID_ID }}
+        AMAZE_ID: ${{ secrets.AMAZE_ID }}
+        TOAST_ID: ${{ secrets.TOAST_ID }}
+        SERVER_ID: ${{ secrets.SERVER_ID }}
       run: |
-        sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-        sudo chmod +x /usr/local/bin/docker-compose
-        docker-compose --version
-
-    - name: Deploy with Docker Swarm
-      run: |
-        docker stack deploy -c docker-compose.yml music-feedback-website
+        docker run \
+          --env USE=${{ secrets.USE }} \
+          --env PASSWORD=${{ secrets.PASSWORD }} \
+          --env DISCORDWIDGET=${{ secrets.DISCORDWIDGET }} \
+          --env EMAIL=${{ secrets.EMAIL }} \
+          --env EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} \
+          --env TOKEN=${{ secrets.TOKEN }} \
+          --env JENN_ID=${{ secrets.JENN_ID }} \
+          --env MAKI_ID=${{ secrets.MAKI_ID }} \
+          --env STRIKE_ID=${{ secrets.STRIKE_ID }} \
+          --env SONO_ID=${{ secrets.SONO_ID }} \
+          --env TAV_ID=${{ secrets.TAV_ID }} \
+          --env DAVID_ID=${{ secrets.DAVID_ID }} \
+          --env AMAZE_ID=${{ secrets.AMAZE_ID }} \
+          --env TOAST_ID=${{ secrets.TOAST_ID }} \
+          --env SERVER_ID=${{ secrets.SERVER_ID }} \
+          -p 8080:80 \
+          music-feedback-website
