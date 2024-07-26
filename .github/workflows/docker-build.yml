@@ -54,20 +54,20 @@ jobs:
         SERVER_ID: ${{ secrets.SERVER_ID }}
       run: |
         docker run \
-          --env USE=${{ secrets.USE }} \
-          --env PASSWORD=${{ secrets.PASSWORD }} \
-          --env DISCORDWIDGET=${{ secrets.DISCORDWIDGET }} \
-          --env EMAIL=${{ secrets.EMAIL }} \
-          --env EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} \
-          --env TOKEN=${{ secrets.TOKEN }} \
-          --env JENN_ID=${{ secrets.JENN_ID }} \
-          --env MAKI_ID=${{ secrets.MAKI_ID }} \
-          --env STRIKE_ID=${{ secrets.STRIKE_ID }} \
-          --env SONO_ID=${{ secrets.SONO_ID }} \
-          --env TAV_ID=${{ secrets.TAV_ID }} \
-          --env DAVID_ID=${{ secrets.DAVID_ID }} \
-          --env AMAZE_ID=${{ secrets.AMAZE_ID }} \
-          --env TOAST_ID=${{ secrets.TOAST_ID }} \
-          --env SERVER_ID=${{ secrets.SERVER_ID }} \
+          -e USE=${{ secrets.USE }} \
+          -e PASSWORD=${{ secrets.PASSWORD }} \
+          -e DISCORDWIDGET=${{ secrets.DISCORDWIDGET }} \
+          -e EMAIL=${{ secrets.EMAIL }} \
+          -e EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} \
+          -e TOKEN=${{ secrets.TOKEN }} \
+          -e JENN_ID=${{ secrets.JENN_ID }} \
+          -e MAKI_ID=${{ secrets.MAKI_ID }} \
+          -e STRIKE_ID=${{ secrets.STRIKE_ID }} \
+          -e SONO_ID=${{ secrets.SONO_ID }} \
+          -e TAV_ID=${{ secrets.TAV_ID }} \
+          -e DAVID_ID=${{ secrets.DAVID_ID }} \
+          -e AMAZE_ID=${{ secrets.AMAZE_ID }} \
+          -e TOAST_ID=${{ secrets.TOAST_ID }} \
+          -e SERVER_ID=${{ secrets.SERVER_ID }} \
           -p 8080:80 \
           jdollx/music-feedback-website
