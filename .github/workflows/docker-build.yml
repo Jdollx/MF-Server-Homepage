@@ -48,5 +48,8 @@ jobs:
         docker-compose --version
 
     - name: Deploy with Docker Swarm
+      env:
+        DOCKER_HOST: tcp://localhost:2376
+        DOCKER_TLS_VERIFY: 1
       run: |
-        docker stack deploy -c docker-compose.yml my_stack
+        docker stack deploy -c docker-compose.yml music-feedback-website
