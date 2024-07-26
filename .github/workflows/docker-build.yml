@@ -40,7 +40,7 @@ jobs:
           TOAST_ID: ${{ secrets.TOAST_ID }}
           SERVER_ID: ${{ secrets.SERVER_ID }}
         run: |
-          docker build \
+          docker buildx build \
             --build-arg USE=${USE} \
             --build-arg PASSWORD=${PASSWORD} \
             --build-arg DISCORDWIDGET=${DISCORDWIDGET} \
@@ -56,7 +56,7 @@ jobs:
             --build-arg AMAZE_ID=${AMAZE_ID} \
             --build-arg TOAST_ID=${TOAST_ID} \
             --build-arg SERVER_ID=${SERVER_ID} \
-            -t $DOCKER_USERNAME/music-feedback-website:latest \
+            -t jdollx/music-feedback-website:latest \
             .
 
       - name: Push Docker Image
@@ -104,5 +104,5 @@ jobs:
             -e TOAST_ID="$TOAST_ID" \
             -e SERVER_ID="$SERVER_ID" \
             -p 8080:80 \
-            --name my-music-app \
+            --name music-feedback-website \
             jdollx/music-feedback-website:latest
