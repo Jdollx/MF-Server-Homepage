@@ -24,4 +24,4 @@ services:
       - TOAST_ID=${TOAST_ID}
       - SERVER_ID=${SERVER_ID}
     ports:
-      - "8082:80"
+      - "8080:80"

@@ -1,4 +1,28 @@
 <?php
+require_once(__DIR__ . '/../../vendor/autoload.php');
+
+// Load environment variables
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../config/');
+$dotenv->safeLoad();
+
+// for docker
+$use = $_ENV['USE'] ?? getenv('USE');
+$password = $_ENV['PASSWORD'] ?? getenv('PASSWORD');
+$discordWidget = $_ENV['DISCORDWIDGET'] ?? getenv('DISCORDWIDGET');
+$email = $_ENV['EMAIL'] ?? getenv('EMAIL');
+$emailPassword = $_ENV['EMAIL_PASSWORD'] ?? getenv('EMAIL_PASSWORD');
+$token = $_ENV['TOKEN'] ?? getenv('TOKEN');
+$jennId = $_ENV['JENN_ID'] ?? getenv('JENN_ID');
+$makiId = $_ENV['MAKI_ID'] ?? getenv('MAKI_ID');
+$strikeId = $_ENV['STRIKE_ID'] ?? getenv('STRIKE_ID');
+$sonoId = $_ENV['SONO_ID'] ?? getenv('SONO_ID');
+$tavId = $_ENV['TAV_ID'] ?? getenv('TAV_ID');
+$davidId = $_ENV['DAVID_ID'] ?? getenv('DAVID_ID');
+$amazeId = $_ENV['AMAZE_ID'] ?? getenv('AMAZE_ID');
+$toastId = $_ENV['TOAST_ID'] ?? getenv('TOAST_ID');
+$serverId = $_ENV['SERVER_ID'] ?? getenv('SERVER_ID');
+
+
 // Discord API endpoint
 $discordAPIEndpoint = 'https://discord.com/api/users/@me/guilds';
 
