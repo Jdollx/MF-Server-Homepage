@@ -40,7 +40,7 @@ jobs:
           TOAST_ID: ${{ secrets.TOAST_ID }}
           SERVER_ID: ${{ secrets.SERVER_ID }}
         run: |
-          docker build \
+          docker buildx build \
             --build-arg USE=${{ secrets.USE }} \
             --build-arg PASSWORD=${{ secrets.PASSWORD }} \
             --build-arg DISCORDWIDGET=${{ secrets.DISCORDWIDGET }} \
