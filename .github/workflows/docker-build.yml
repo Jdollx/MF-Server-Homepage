@@ -1,69 +1,50 @@
-name: Docker Deployment
+name: Build and Push Docker Image
 
 on:
   push:
     branches:
-      - "main"
+      - main  # Trigger the workflow on push to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger the workflow on pull requests to the main branch
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest  # Run the job on the latest Ubuntu runner
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Fetch all history for all branches and tags
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
 
-      - name: Login to Docker Hub
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - name: Cache Docker layers
+      uses: actions/cache@v3
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-
 
-      - name: Build Docker image
-        run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/music-feedback-website:latest .
+    - name: Build Docker image
+      run: |
+        docker-compose -f docker-compose.yml build
+      env:
+        DOCKER_BUILDKIT: 1
 
-      - name: Push Docker image
-        run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/music-feedback-website:latest
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Run Docker Container
-        env:
-          USE: ${{ secrets.USE }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-          DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
-          EMAIL: ${{ secrets.EMAIL }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          TOKEN: ${{ secrets.TOKEN }}
-          JENN_ID: ${{ secrets.JENN_ID }}
-          MAKI_ID: ${{ secrets.MAKI_ID }}
-          STRIKE_ID: ${{ secrets.STRIKE_ID }}
-          SONO_ID: ${{ secrets.SONO_ID }}
-          TAV_ID: ${{ secrets.TAV_ID }}
-          DAVID_ID: ${{ secrets.DAVID_ID }}
-          AMAZE_ID: ${{ secrets.AMAZE_ID }}
-          TOAST_ID: ${{ secrets.TOAST_ID }}
-          SERVER_ID: ${{ secrets.SERVER_ID }}
-        run: |
-          docker run -d \
-            -e USE="$USE" \
-            -e PASSWORD="$PASSWORD" \
-            -e DISCORDWIDGET="$DISCORDWIDGET" \
-            -e EMAIL="$EMAIL" \
-            -e EMAIL_PASSWORD="$EMAIL_PASSWORD" \
-            -e TOKEN="$TOKEN" \
-            -e JENN_ID="$JENN_ID" \
-            -e MAKI_ID="$MAKI_ID" \
-            -e STRIKE_ID="$STRIKE_ID" \
-            -e SONO_ID="$SONO_ID" \
-            -e TAV_ID="$TAV_ID" \
-            -e DAVID_ID="$DAVID_ID" \
-            -e AMAZE_ID="$AMAZE_ID" \
-            -e TOAST_ID="$TOAST_ID" \
-            -e SERVER_ID="$SERVER_ID" \
-            -p 8080:80 \
-            --name music-feedback-website \
-            ${{ secrets.DOCKER_USERNAME }}/music-feedback-website:latest
+    - name: Push Docker image
+      run: |
+        docker-compose -f docker-compose.yml push
+
+    - name: Verify image is pushed
+      run: |
+        docker images

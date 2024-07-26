@@ -1,8 +1,10 @@
 version: '3'
 services:
   web:
-    build: .
-    env_file:
-      - ./config/.env
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    volumes:
+      - ./config:/var/www/html/config
     ports:
       - "8082:80"
