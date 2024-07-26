@@ -16,12 +16,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Login to Docker Hub
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-
       - name: Build Docker image
         env:
           USE: ${{ secrets.USE }}
@@ -41,21 +35,21 @@ jobs:
           SERVER_ID: ${{ secrets.SERVER_ID }}
         run: |
           docker buildx build \
-            --build-arg USE=${{ secrets.USE }} \
-            --build-arg PASSWORD=${{ secrets.PASSWORD }} \
-            --build-arg DISCORDWIDGET=${{ secrets.DISCORDWIDGET }} \
-            --build-arg EMAIL=${{ secrets.email }} \
-            --build-arg EMAIL_PASSWORD=${{ secrets.email_password }} \
-            --build-arg TOKEN=${{ secrets.TOKEN }} \
-            --build-arg JENN_ID=${{ secrets.JENN_ID }} \
-            --build-arg MAKI_ID=${{ secrets.MAKI_ID }} \
-            --build-arg STRIKE_ID=${{ secrets.STRIKE_ID }} \
-            --build-arg SONO_ID=${{ secrets.SONO_ID }} \
-            --build-arg TAV_ID=${{ secrets.TAV_ID }} \
-            --build-arg DAVID_ID=${{ secrets.DAVID_ID }} \
-            --build-arg AMAZE_ID=${{ secrets.AMAZE_ID }} \
-            --build-arg TOAST_ID=${{ secrets.TOAST_ID }} \
-            --build-arg SERVER_ID=${{ secrets.SERVER_ID }} \
+            --build-arg USE=${{ env.USE }} \
+            --build-arg PASSWORD=${{ env.PASSWORD }} \
+            --build-arg DISCORDWIDGET=${{ env.DISCORDWIDGET }} \
+            --build-arg EMAIL=${{ env.EMAIL }} \
+            --build-arg EMAIL_PASSWORD=${{ env.EMAIL_PASSWORD }} \
+            --build-arg TOKEN=${{ env.TOKEN }} \
+            --build-arg JENN_ID=${{ env.JENN_ID }} \
+            --build-arg MAKI_ID=${{ env.MAKI_ID }} \
+            --build-arg STRIKE_ID=${{ env.STRIKE_ID }} \
+            --build-arg SONO_ID=${{ env.SONO_ID }} \
+            --build-arg TAV_ID=${{ env.TAV_ID }} \
+            --build-arg DAVID_ID=${{ env.DAVID_ID }} \
+            --build-arg AMAZE_ID=${{ env.AMAZE_ID }} \
+            --build-arg TOAST_ID=${{ env.TOAST_ID }} \
+            --build-arg SERVER_ID=${{ env.SERVER_ID }} \
             -t music-feedback-website \
             .
 
