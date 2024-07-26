@@ -22,9 +22,52 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-      - name: Pull Docker Image
+      - name: Build Docker Image
+        env:
+          USE: ${{ secrets.USE }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
+          EMAIL: ${{ secrets.EMAIL }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          TOKEN: ${{ secrets.TOKEN }}
+          JENN_ID: ${{ secrets.JENN_ID }}
+          MAKI_ID: ${{ secrets.MAKI_ID }}
+          STRIKE_ID: ${{ secrets.STRIKE_ID }}
+          SONO_ID: ${{ secrets.SONO_ID }}
+          TAV_ID: ${{ secrets.TAV_ID }}
+          DAVID_ID: ${{ secrets.DAVID_ID }}
+          AMAZE_ID: ${{ secrets.AMAZE_ID }}
+          TOAST_ID: ${{ secrets.TOAST_ID }}
+          SERVER_ID: ${{ secrets.SERVER_ID }}
         run: |
-          docker pull $DOCKER_USERNAME/music-feedback-website:latest
+          docker build \
+            --build-arg USE=${USE} \
+            --build-arg PASSWORD=${PASSWORD} \
+            --build-arg DISCORDWIDGET=${DISCORDWIDGET} \
+            --build-arg EMAIL=${EMAIL} \
+            --build-arg EMAIL_PASSWORD=${EMAIL_PASSWORD} \
+            --build-arg TOKEN=${TOKEN} \
+            --build-arg JENN_ID=${JENN_ID} \
+            --build-arg MAKI_ID=${MAKI_ID} \
+            --build-arg STRIKE_ID=${STRIKE_ID} \
+            --build-arg SONO_ID=${SONO_ID} \
+            --build-arg TAV_ID=${TAV_ID} \
+            --build-arg DAVID_ID=${DAVID_ID} \
+            --build-arg AMAZE_ID=${AMAZE_ID} \
+            --build-arg TOAST_ID=${TOAST_ID} \
+            --build-arg SERVER_ID=${SERVER_ID} \
+            -t $DOCKER_USERNAME/music-feedback-website:latest \
+            .
+
+      - name: Push Docker Image
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+          docker tag music-feedback-website:latest $DOCKER_USERNAME/music-feedback-website:latest
+          docker push $DOCKER_USERNAME/music-feedback-website:latest
+          docker logout
 
       - name: Run Docker Container
         env:
