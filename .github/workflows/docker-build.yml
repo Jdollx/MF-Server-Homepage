@@ -56,7 +56,8 @@ jobs:
             --build-arg AMAZE_ID=${{ secrets.AMAZE_ID }} \
             --build-arg TOAST_ID=${{ secrets.TOAST_ID }} \
             --build-arg SERVER_ID=${{ secrets.SERVER_ID }} \
-            -t music-feedback-website .
+            -t music-feedback-website \
+            .
 
       - name: Push Docker image
         env:
