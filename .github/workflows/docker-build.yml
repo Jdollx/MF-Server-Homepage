@@ -44,7 +44,7 @@ jobs:
     - name: Deploy with Docker
       env:
         USE: ${{ secrets.USE }}
-        PASSWORD: ${{ secrets.PASSWORD }}
+        USE_PASSWORD: ${{ secrets.USE_PASSWORD }}
         DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
         EMAIL: ${{ secrets.EMAIL }}
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
@@ -62,7 +62,7 @@ jobs:
         docker run \
           --name music-feedback-website \
           -e USE="$USE" \
-          -e PASSWORD="$PASSWORD" \
+          -e USE_PASSWORD="$USE_PASSWORD" \
           -e DISCORDWIDGET="$DISCORDWIDGET" \
           -e EMAIL="$EMAIL" \
           -e EMAIL_PASSWORD="$EMAIL_PASSWORD" \
