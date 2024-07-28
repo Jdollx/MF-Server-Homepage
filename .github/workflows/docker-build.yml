@@ -10,71 +10,84 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
-    - name: Login to Docker Hub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and push Docker images
-      run: |
-        docker build -t jdollx/music-feedback-website:latest .
-        docker push jdollx/music-feedback-website:latest
+      - name: Build and push Docker images
+        run: |
+          docker build -t jdollx/music-feedback-website:latest .
+          docker push jdollx/music-feedback-website:latest
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Login to Docker Hub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Deploy with Docker
-      env:
-        USE: ${{ secrets.USE }}
-        USE_PASSWORD: ${{ secrets.USE_PASSWORD }}
-        DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
-        EMAIL: ${{ secrets.EMAIL }}
-        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-        TOKEN: ${{ secrets.TOKEN }}
-        JENN_ID: ${{ secrets.JENN_ID }}
-        MAKI_ID: ${{ secrets.MAKI_ID }}
-        STRIKE_ID: ${{ secrets.STRIKE_ID }}
-        SONO_ID: ${{ secrets.SONO_ID }}
-        TAV_ID: ${{ secrets.TAV_ID }}
-        DAVID_ID: ${{ secrets.DAVID_ID }}
-        AMAZE_ID: ${{ secrets.AMAZE_ID }}
-        TOAST_ID: ${{ secrets.TOAST_ID }}
-        SERVER_ID: ${{ secrets.SERVER_ID }}
-      run: |
-        docker run \
-          --name music-feedback-website \
-          -e USE="$USE" \
-          -e USE_PASSWORD="$USE_PASSWORD" \
-          -e DISCORDWIDGET="$DISCORDWIDGET" \
-          -e EMAIL="$EMAIL" \
-          -e EMAIL_PASSWORD="$EMAIL_PASSWORD" \
-          -e TOKEN="$TOKEN" \
-          -e JENN_ID="$JENN_ID" \
-          -e MAKI_ID="$MAKI_ID" \
-          -e STRIKE_ID="$STRIKE_ID" \
-          -e SONO_ID="$SONO_ID" \
-          -e TAV_ID="$TAV_ID" \
-          -e DAVID_ID="$DAVID_ID" \
-          -e AMAZE_ID="$AMAZE_ID" \
-          -e TOAST_ID="$TOAST_ID" \
-          -e SERVER_ID="$SERVER_ID" \
-          -p 8082:80 \
-          jdollx/music-feedback-website:latest
+      - name: Deploy with Docker
+        env:
+          USE: ${{ secrets.USE }}
+          USE_PASSWORD: ${{ secrets.USE_PASSWORD }}
+          DISCORDWIDGET: ${{ secrets.DISCORDWIDGET }}
+          EMAIL: ${{ secrets.EMAIL }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          TOKEN: ${{ secrets.TOKEN }}
+          JENN_ID: ${{ secrets.JENN_ID }}
+          MAKI_ID: ${{ secrets.MAKI_ID }}
+          STRIKE_ID: ${{ secrets.STRIKE_ID }}
+          SONO_ID: ${{ secrets.SONO_ID }}
+          TAV_ID: ${{ secrets.TAV_ID }}
+          DAVID_ID: ${{ secrets.DAVID_ID }}
+          AMAZE_ID: ${{ secrets.AMAZE_ID }}
+          TOAST_ID: ${{ secrets.TOAST_ID }}
+          SERVER_ID: ${{ secrets.SERVER_ID }}
+        run: |
+          docker run -d --name music-feedback-website \
+            -e USE="$USE" \
+            -e USE_PASSWORD="$USE_PASSWORD" \
+            -e DISCORDWIDGET="$DISCORDWIDGET" \
+            -e EMAIL="$EMAIL" \
+            -e EMAIL_PASSWORD="$EMAIL_PASSWORD" \
+            -e TOKEN="$TOKEN" \
+            -e JENN_ID="$JENN_ID" \
+            -e MAKI_ID="$MAKI_ID" \
+            -e STRIKE_ID="$STRIKE_ID" \
+            -e SONO_ID="$SONO_ID" \
+            -e TAV_ID="$TAV_ID" \
+            -e DAVID_ID="$DAVID_ID" \
+            -e AMAZE_ID="$AMAZE_ID" \
+            -e TOAST_ID="$TOAST_ID" \
+            -e SERVER_ID="$SERVER_ID" \
+            -p 8082:80 \
+            jdollx/music-feedback-website:latest
+
+      - name: Wait for Docker container to be ready
+        run: |
+          sleep 10
+
+      - name: Print Docker logs
+        run: |
+          docker logs music-feedback-website
+
+      - name: Stop and remove Docker container
+        if: always()
+        run: |
+          docker stop music-feedback-website
+          docker rm music-feedback-website
