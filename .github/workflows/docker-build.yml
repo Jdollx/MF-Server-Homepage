@@ -59,7 +59,6 @@ jobs:
               -e AMAZE_ID="${AMAZE_ID}" \
               -e TOAST_ID="${TOAST_ID}" \
               -e SERVER_ID="${SERVER_ID}" \
-              -p 443:80 \
               jdollx/music-feedback-website:latest
           EOF
 
