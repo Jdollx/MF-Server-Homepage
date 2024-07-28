@@ -16,7 +16,7 @@ $dotenv->safeLoad();
 
 // for docker
 $use = $_ENV['USE'] ?? getenv('USE');
-$password = $_ENV['PASSWORD'] ?? getenv('PASSWORD');
+$password = $_ENV['USE_PASSWORD'] ?? getenv('USE_PASSWORD');
 $discordWidget = $_ENV['DISCORDWIDGET'] ?? getenv('DISCORDWIDGET');
 $email = $_ENV['EMAIL'] ?? getenv('EMAIL');
 $emailPassword = $_ENV['EMAIL_PASSWORD'] ?? getenv('EMAIL_PASSWORD');
@@ -42,7 +42,7 @@ function sendMail($discordUser, $songLink)
         $mail->Host = "smtp.gmail.com"; // Change this to match your SMTP server
         $mail->SMTPAuth = true;
         $mail->Username = $_ENV['USE']; // Your SMTP username
-        $mail->Password = $_ENV['PASSWORD']; // Your SMTP password
+        $mail->Password = $_ENV['USE_PASSWORD']; // Your SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 

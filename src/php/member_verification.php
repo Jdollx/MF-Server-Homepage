@@ -7,7 +7,7 @@ $dotenv->safeLoad();
 
 // for docker
 $use = $_ENV['USE'] ?? getenv('USE');
-$password = $_ENV['PASSWORD'] ?? getenv('PASSWORD');
+$password = $_ENV['USE_PASSWORD'] ?? getenv('USE_PASSWORD');
 $discordWidget = $_ENV['DISCORDWIDGET'] ?? getenv('DISCORDWIDGET');
 $email = $_ENV['EMAIL'] ?? getenv('EMAIL');
 $emailPassword = $_ENV['EMAIL_PASSWORD'] ?? getenv('EMAIL_PASSWORD');
