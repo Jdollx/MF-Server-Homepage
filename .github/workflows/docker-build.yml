@@ -44,8 +44,6 @@ jobs:
             docker stop music-feedback-website || true
             docker rm music-feedback-website || true
             docker run -d --name music-feedback-website \
-              -p 8080:80 \
-              -p 8443:443 \
               -e USE="${USE}" \
               -e USE_PASSWORD="${USE_PASSWORD}" \
               -e DISCORDWIDGET="${DISCORDWIDGET}" \
