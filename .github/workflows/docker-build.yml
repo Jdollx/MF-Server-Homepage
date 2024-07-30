@@ -44,21 +44,21 @@ jobs:
             docker stop music-feedback-website || true
             docker rm music-feedback-website || true
             docker run -d --name music-feedback-website \
-              -e USE="${USE}" \
-              -e USE_PASSWORD="${USE_PASSWORD}" \
-              -e DISCORDWIDGET="${DISCORDWIDGET}" \
-              -e EMAIL="${EMAIL}" \
-              -e EMAIL_PASSWORD="${EMAIL_PASSWORD}" \
-              -e TOKEN="${TOKEN}" \
-              -e JENN_ID="${JENN_ID}" \
-              -e MAKI_ID="${MAKI_ID}" \
-              -e STRIKE_ID="${STRIKE_ID}" \
-              -e SONO_ID="${SONO_ID}" \
-              -e TAV_ID="${TAV_ID}" \
-              -e DAVID_ID="${DAVID_ID}" \
-              -e AMAZE_ID="${AMAZE_ID}" \
-              -e TOAST_ID="${TOAST_ID}" \
-              -e SERVER_ID="${SERVER_ID}" \
+            -e USE="${{ secrets.USE }}" \
+            -e USE_PASSWORD="${{ secrets.USE_PASSWORD }}" \
+            -e DISCORDWIDGET="${{ secrets.DISCORDWIDGET }}" \
+            -e EMAIL="${{ secrets.EMAIL }}" \
+            -e EMAIL_PASSWORD="${{ secrets.EMAIL_PASSWORD }}" \
+            -e TOKEN="${{ secrets.TOKEN }}" \
+            -e JENN_ID="${{ secrets.JENN_ID }}" \
+            -e MAKI_ID="${{ secrets.MAKI_ID }}" \
+            -e STRIKE_ID="${{ secrets.STRIKE_ID }}" \
+            -e SONO_ID="${{ secrets.SONO_ID }}" \
+            -e TAV_ID="${{ secrets.TAV_ID }}" \
+            -e DAVID_ID="${{ secrets.DAVID_ID }}" \
+            -e AMAZE_ID="${{ secrets.AMAZE_ID }}" \
+            -e TOAST_ID="${{ secrets.TOAST_ID }}" \
+            -e SERVER_ID="${{ secrets.SERVER_ID }}" \
               jdollx/music-feedback-website:latest
           EOF
 
