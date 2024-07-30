@@ -44,6 +44,8 @@ jobs:
             docker stop music-feedback-website || true
             docker rm music-feedback-website || true
             docker run -d --name music-feedback-website \
+            -p 80:80 \
+            -p 443:443 \
             -e USE="${{ secrets.USE }}" \
             -e USE_PASSWORD="${{ secrets.USE_PASSWORD }}" \
             -e DISCORDWIDGET="${{ secrets.DISCORDWIDGET }}" \
@@ -59,7 +61,7 @@ jobs:
             -e AMAZE_ID="${{ secrets.AMAZE_ID }}" \
             -e TOAST_ID="${{ secrets.TOAST_ID }}" \
             -e SERVER_ID="${{ secrets.SERVER_ID }}" \
-              jdollx/music-feedback-website:latest
+            jdollx/music-feedback-website:latest
           EOF
 
       - name: Wait for Docker container to be ready
