@@ -15,6 +15,9 @@ RUN apt-get update && apt-get install -y \
     gnupg \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 # Install Certbot from the official Debian repository
 RUN apt-get update && apt-get install -y \
     certbot \
