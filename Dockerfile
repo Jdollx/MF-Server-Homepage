@@ -38,8 +38,7 @@ COPY musicfeedbackdisc.conf /etc/apache2/sites-available/musicfeedbackdisc.conf
 
 # Enable the site and necessary modules
 RUN a2ensite musicfeedbackdisc.conf \
-    && a2enmod rewrite ssl \
-    && service apache2 reload
+    && a2enmod rewrite ssl
 
 # Expose ports 80 and 443 for HTTP and HTTPS
 EXPOSE 80
