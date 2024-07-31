@@ -32,11 +32,15 @@ COPY . .
 # Copy custom Apache configuration
 COPY musicfeedbackdisc.conf /etc/apache2/sites-available/musicfeedbackdisc.conf
 
-# Enable site and modules
-RUN a2ensite musicfeedbackdisc.conf \
-    && a2enmod rewrite ssl \
-    && apache2ctl configtest \
-    && service apache2 reload
+# Enable modules and site
+RUN a2enmod rewrite ssl \
+    && a2ensite musicfeedbackdisc.conf
+
+# Test Apache configuration
+RUN apache2ctl configtest
+
+# Reload Apache service
+RUN service apache2 reload
 
 # Expose ports 80 and 443 for HTTP and HTTPS
 EXPOSE 80
