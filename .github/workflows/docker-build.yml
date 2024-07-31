@@ -62,6 +62,8 @@ jobs:
             -e TOAST_ID="${{ secrets.TOAST_ID }}" \
             -e SERVER_ID="${{ secrets.SERVER_ID }}" \
             jdollx/music-feedback-website:latest
+            docker exec -it music-feedback-website certbot --apache -d musicfeedbackdisc.com -d www.musicfeedbackdisc.com
+            docker exec -it music-feedback-website apachectl restart
           EOF
 
       - name: Wait for Docker container to be ready
