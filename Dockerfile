@@ -12,12 +12,14 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libzip-dev \
     unzip \
-    software-properties-common \
     gnupg \
-    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-    && echo "deb http://ppa.launchpad.net/certbot/certbot/ubuntu focal main" | tee /etc/apt/sources.list.d/certbot.list \
-    && apt-get update \
-    && apt-get install -y certbot python3-certbot-apache
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install Certbot from the official Debian repository
+RUN apt-get update && apt-get install -y \
+    certbot \
+    python3-certbot-apache \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Copy the Composer files
 COPY composer.json composer.lock ./
