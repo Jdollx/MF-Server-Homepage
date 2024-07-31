@@ -13,7 +13,9 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     unzip \
     software-properties-common \
-    && add-apt-repository ppa:certbot/certbot \
+    gnupg \
+    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb http://ppa.launchpad.net/certbot/certbot/ubuntu focal main" | tee /etc/apt/sources.list.d/certbot.list \
     && apt-get update \
     && apt-get install -y certbot python3-certbot-apache
 
