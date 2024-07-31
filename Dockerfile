@@ -33,8 +33,17 @@ RUN composer install
 # Copy application files to the container
 COPY . .
 
-# Expose port 80 for the web server
+# Copy custom Apache configuration
+COPY musicfeedbackdisc.conf /etc/apache2/sites-available/musicfeedbackdisc.conf
+
+# Enable the site and necessary modules
+RUN a2ensite musicfeedbackdisc.conf \
+    && a2enmod rewrite ssl \
+    && service apache2 reload
+
+# Expose ports 80 and 443 for HTTP and HTTPS
 EXPOSE 80
+EXPOSE 443
 
 # Start Apache
 CMD ["apache2-foreground"]
