@@ -4,7 +4,7 @@ FROM php:8.1-apache
 # Set the working directory in the container
 WORKDIR /var/www/html
 
-# Install dependencies required to run Composer and Certbot
+# Install dependencies required to run Composer
 RUN apt-get update && apt-get install -y \
     curl \
     libpng-dev \
@@ -12,13 +12,17 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libzip-dev \
     unzip \
-    software-properties-common \
     gnupg \
-    certbot \
-    python3-certbot-apache
+    lsb-release \
+    sudo \
+    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && apt-get update
 
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+# Install Snapd and Certbot
+RUN apt-get install -y snapd \
+    && snap install core \
+    && snap refresh core \
+    && snap install --classic certbot
 
 # Copy the Composer files
 COPY composer.json composer.lock ./
@@ -29,15 +33,9 @@ RUN composer install
 # Copy application files to the container
 COPY . .
 
-# Copy Apache configuration file
-COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
-
-# Enable SSL and Rewrite modules
-RUN a2enmod ssl
-RUN a2enmod rewrite
-
-# Expose port 80 for HTTP and 443 for HTTPS
-EXPOSE 80 443
+# Expose ports for the web server
+EXPOSE 80
+EXPOSE 443
 
 # Start Apache
 CMD ["apache2-foreground"]
