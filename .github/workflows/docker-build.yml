@@ -72,7 +72,7 @@ jobs:
             sleep 30
 
             # Execute Certbot to obtain SSL certificates
-            docker exec music-feedback-website certbot --apache -d musicfeedbackdisc.com -d www.musicfeedbackdisc.com
+            docker exec music-feedback-website certbot --apache --non-interactive --agree-tos --email ${{ secrets.EMAIL }} -d musicfeedbackdisc.com -d www.musicfeedbackdisc.com
 
             # Restart Apache to apply changes
             docker exec music-feedback-website apachectl restart
