@@ -40,47 +40,33 @@ jobs:
       - name: Deploy with Docker
         run: |
           ssh -T -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-            # Pull the latest image
             docker pull jdollx/music-feedback-website:latest
-
-            # Stop and remove any existing container
             docker stop music-feedback-website || true
             docker rm music-feedback-website || true
-
-            # Run the new container
             docker run -d --name music-feedback-website \
-              -p 80:80 \
-              -p 443:443 \
-              -e USE="${{ secrets.USE }}" \
-              -e USE_PASSWORD="${{ secrets.USE_PASSWORD }}" \
-              -e DISCORDWIDGET="${{ secrets.DISCORDWIDGET }}" \
-              -e EMAIL="${{ secrets.EMAIL }}" \
-              -e EMAIL_PASSWORD="${{ secrets.EMAIL_PASSWORD }}" \
-              -e TOKEN="${{ secrets.TOKEN }}" \
-              -e JENN_ID="${{ secrets.JENN_ID }}" \
-              -e MAKI_ID="${{ secrets.MAKI_ID }}" \
-              -e STRIKE_ID="${{ secrets.STRIKE_ID }}" \
-              -e SONO_ID="${{ secrets.SONO_ID }}" \
-              -e TAV_ID="${{ secrets.TAV_ID }}" \
-              -e DAVID_ID="${{ secrets.DAVID_ID }}" \
-              -e AMAZE_ID="${{ secrets.AMAZE_ID }}" \
-              -e TOAST_ID="${{ secrets.TOAST_ID }}" \
-              -e SERVER_ID="${{ secrets.SERVER_ID }}" \
-              jdollx/music-feedback-website:latest
-
-            # Wait for the container to be ready
-            sleep 30
-
-            # Execute Certbot to obtain SSL certificates
-            docker exec music-feedback-website certbot --apache --non-interactive --agree-tos --email ${{ secrets.EMAIL }} -d musicfeedbackdisc.com -d www.musicfeedbackdisc.com
-
-            # Restart Apache to apply changes
-            docker exec music-feedback-website apachectl graceful
+            -p 80:80 \
+            -p 443:443 \
+            -e USE="${{ secrets.USE }}" \
+            -e USE_PASSWORD="${{ secrets.USE_PASSWORD }}" \
+            -e DISCORDWIDGET="${{ secrets.DISCORDWIDGET }}" \
+            -e EMAIL="${{ secrets.EMAIL }}" \
+            -e EMAIL_PASSWORD="${{ secrets.EMAIL_PASSWORD }}" \
+            -e TOKEN="${{ secrets.TOKEN }}" \
+            -e JENN_ID="${{ secrets.JENN_ID }}" \
+            -e MAKI_ID="${{ secrets.MAKI_ID }}" \
+            -e STRIKE_ID="${{ secrets.STRIKE_ID }}" \
+            -e SONO_ID="${{ secrets.SONO_ID }}" \
+            -e TAV_ID="${{ secrets.TAV_ID }}" \
+            -e DAVID_ID="${{ secrets.DAVID_ID }}" \
+            -e AMAZE_ID="${{ secrets.AMAZE_ID }}" \
+            -e TOAST_ID="${{ secrets.TOAST_ID }}" \
+            -e SERVER_ID="${{ secrets.SERVER_ID }}" \
+            jdollx/music-feedback-website:latest
           EOF
 
       - name: Wait for Docker container to be ready
         run: |
-          sleep 30
+          sleep 10
 
       - name: Print Docker logs
         run: |
