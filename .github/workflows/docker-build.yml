@@ -46,8 +46,6 @@ jobs:
             docker run -d --name music-feedback-website \
             -p 80:80 \
             -p 443:443 \
-            -v /etc/letsencrypt/live/musicfeedbackdisc.com/fullchain.pem:/etc/ssl/certs/fullchain.pem \
-            -v /etc/letsencrypt/live/musicfeedbackdisc.com/privkey.pem:/etc/ssl/private/privkey.pem \
             -e USE="${{ secrets.USE }}" \
             -e USE_PASSWORD="${{ secrets.USE_PASSWORD }}" \
             -e DISCORDWIDGET="${{ secrets.DISCORDWIDGET }}" \
@@ -65,7 +63,6 @@ jobs:
             -e SERVER_ID="${{ secrets.SERVER_ID }}" \
             jdollx/music-feedback-website:latest
           EOF
-
 
       - name: Wait for Docker container to be ready
         run: |
