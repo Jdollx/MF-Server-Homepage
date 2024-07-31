@@ -14,10 +14,8 @@ RUN apt-get update && apt-get install -y \
     unzip \
     software-properties-common \
     gnupg \
-    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-    && echo "deb http://ppa.launchpad.net/certbot/certbot/ubuntu focal main" | tee /etc/apt/sources.list.d/certbot.list \
-    && apt-get update \
-    && apt-get install -y certbot python3-certbot-apache
+    certbot \
+    python3-certbot-apache
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
