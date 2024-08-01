@@ -1,5 +1,0 @@
-# Redirect /index.html to /home
-Redirect 301 /index.html /home
-
-# Redirect /submission.html to /submit-a-song
-Redirect 301 /submission.html /submit-a-song

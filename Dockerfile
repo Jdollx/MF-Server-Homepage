@@ -25,9 +25,6 @@ RUN composer install
 # Copy application files to the container
 COPY . .
 
-# Copy .htaccess file to Apache configuration directory
-COPY .htaccess /var/www/html/.htaccess
-
 # Expose port 80 for the web server (localhost:8080)
 EXPOSE 80
 EXPOSE 443
