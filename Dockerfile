@@ -25,9 +25,15 @@ RUN composer install
 # Copy application files to the container
 COPY . .
 
+# Copy custom Apache configuration file
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
 # Expose port 80 for the web server (localhost:8080)
 EXPOSE 80
 EXPOSE 443
+
+# Enable mod_rewrite
+RUN a2enmod rewrite
 
 # Start Apache
 CMD ["apache2-foreground"]
